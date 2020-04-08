@@ -1,0 +1,109 @@
+var axe = '0x40B74273';
+var lumbArea = 5;
+Orion.Print("currently at: "+ Player.X()+" "+Player.Y());
+var treeWorldLocation;
+var emptyTrees = [];
+treeWorldLocation = FindTreesInSurrArea();
+function CutTreeByWorldLoc()
+{
+	Orion.ClearJournal();
+	for(i=0;i<treeWorldLocation.length;i++){
+		
+		Orion.WalkTo(treeWorldLocation[i][0],treeWorldLocation[i][1],0);
+		Orion.Wait(1000);
+		LumberAgain(treeWorldLocation[i][0],treeWorldLocation[i][1], i);
+		
+		if(Player.Weight() >=  Player.MaxWeight()){
+			goBank();
+			break;
+		}
+	}
+	if(Player.Weight() >=  Player.MaxWeight()){
+			goBank();
+		
+	}else{
+		while(treeWorldLocation.length === 0){
+			treeWorldLocation = FindTreesInSurrArea();
+		    if(treeWorldLocation.length === 0){
+				lumbArea += 5;
+			}else{
+				lumbArea = 5;
+			}
+		}
+		CutTreeByWorldLoc();
+	}
+}
+
+function isNotEmptyTree(i,j){
+	if(emptyTrees.length === 0){
+		return true;
+	}
+
+	for(var k=0; k < emptyTrees.length; k++){
+		var curr = emptyTrees[k];
+		if(curr[0] === i && curr[1] === j){
+			return false;
+		}
+	}
+
+	return true;
+}
+function goBank(){
+
+  Orion.WalkTo(1646,1609,0);
+}
+
+
+function FindTreesInSurrArea()
+{	
+	var maxSearchDistance=lumbArea;
+	var treeWorldLocations=createArr(50,50);
+	var trueWorldLocCounter=0;
+	
+	for(i=(Player.X()-maxSearchDistance);i<(Player.X()+maxSearchDistance+1);i++){
+		for(j=(Player.Y()-maxSearchDistance);j<(Player.Y()+maxSearchDistance+1);j++){
+			//Orion.Print("Searching X= " + i + "and Y= " + j + " location");
+			if(Orion.ValidateTargetTile('tree', i, j) && isNotEmptyTree(i, j)){
+				Orion.Print("Found a tree, location is saved as " + (trueWorldLocCounter+1));
+				treeWorldLocations[trueWorldLocCounter][0]=i;
+				treeWorldLocations[trueWorldLocCounter][1]=j;
+				trueWorldLocCounter++;
+			}	
+		}
+	}
+	treeWorldLocations.length=trueWorldLocCounter;
+	return treeWorldLocations;
+}
+
+function createArr(x, y) {
+    var arr = new Array(x);
+
+    for (var i = 0; i < x; i++) {
+        arr[i] = new Array(y);
+    }
+
+    return arr;
+}
+
+function LumberAgain(x,y,i){
+	var text = 'not enough wood|That is too far away|no line of sight|place any wood into|cannot be seen';
+	while (!Player.Dead()){
+		Orion.UseType('0x0E21', '0xFFFF');
+		if (Orion.WaitForTarget(1000)){
+			Orion.TargetObject('self');	
+		}
+		Orion.Wait(3000);
+		Orion.UseObject(axe);
+		Orion.WaitTargetTile('tree',x,y,0);
+		var msg = Orion.WaitJournal(text, Orion.Now(), Orion.Now() + 5000, 'sys|my');
+		if(msg !=null){	
+			Orion.Print("Removing tree " + treeWorldLocation.length);
+			emptyTrees.push([x,y]);
+			treeWorldLocation.splice(i, 1);
+			Orion.Print("Tree removed " + treeWorldLocation.length);
+			break;
+		}
+		Orion.Wait(3500);
+	}
+	Orion.ClearJournal();
+}
