@@ -87,13 +87,16 @@ function createArr(x, y) {
 
 function LumberAgain(x,y,i){
 	var text = 'not enough wood|That is too far away|no line of sight|place any wood into|cannot be seen';
-	while (!Player.Dead()){
+	while(Player.Hits()<90){
 		Orion.UseType('0x0E21', '0xFFFF');
 		if (Orion.WaitForTarget(1000)){
 			Orion.TargetObject('self');	
 		}
 		Orion.Wait(3000);
-		Orion.UseObject(axe);
+	}
+	while (!Player.Dead()){
+		
+		Orion.UseType('0x0F43', '0xFFFF');
 		Orion.WaitTargetTile('tree',x,y,0);
 		var msg = Orion.WaitJournal(text, Orion.Now(), Orion.Now() + 5000, 'sys|my');
 		if(msg !=null){	
