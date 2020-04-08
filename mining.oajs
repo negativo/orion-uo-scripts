@@ -1,0 +1,345 @@
+var oreType = '0x19B9';
+var ingotType = '0x1BF2';
+var hammerType = '0x13e3';
+
+var miningLogFilePath = 'c:\\Games\\Ultima Online Classic\\OA\\mining.txt';
+var mineIndex = 0;
+var minesCount = 11;
+var mineLocationsState = {};
+var oreRefreshInterval = 1800; // Seconds
+var maxSearchDistance = 11; // Set Mining Range (Suggested Max 12);
+var packAnimalOreLimit = 132;
+var maxWeightDifference = 150;
+
+function LoadMineLocationsState(__private) {
+    var file = Orion.NewFile();
+    file.Open(miningLogFilePath);
+    var line = file.ReadLine();
+    while (line) {
+        var values = line.split(' ');
+        var lastMineTime = parseInt(values[1]);
+
+        if (!mineLocationsState[values[0]] || (mineLocationsState[values[0]] > lastMineTime)) {
+            mineLocationsState[values[0]] = lastMineTime;
+        }
+
+        line = file.ReadLine();
+    }
+    file.Close();
+}
+
+function SaveMineLocationsState(x, y) {
+    var key = x + ',' + y;
+    var now = Orion.Now();
+    mineLocationsState[key] = now;
+
+    var file = Orion.NewFile();
+    file.Append(miningLogFilePath);
+    file.Write(key + ' ' + now + '\n');
+    file.Close();
+}
+
+function CanDigLocation(x, y) {
+    var key = x + ',' + y;
+    var now = Orion.Now();
+
+    var r = !mineLocationsState[key] || ((now - mineLocationsState[key]) / 1000 > oreRefreshInterval);
+
+    if (!r) {
+        Orion.Print('Skipping location: ' + x + ', ' + y);
+    }
+
+    return r;
+}
+
+function MineExec() {
+    SetMineRunebook();
+    SetPackAnimal1();
+    SetPackAnimal2();
+    SetHomeRunebook();
+
+    LoadMineLocationsState();
+
+    while (!Player.Dead()) {
+        RecallTo('mineRunebook', -1 + (mineIndex + 1) * 6);
+        var mineLocations = FindMinesInSurrArea().reverse().filter(function (loc) {
+            return CanDigLocation(loc.x, loc.y);
+        });
+        while (mineLocations.length) {
+            Orion.Print('Mining rune #' + mineIndex);
+
+            Orion.ClearJournal();
+
+            var location = mineLocations.pop();
+
+            Orion.WalkTo(location.x, location.y, 0);
+
+            var x = Player.X();
+            var y = Player.Y();
+
+            for (var z = -1; z <= 1; z++) {
+                for (var k = -1; k <= 1; k++) {
+                    var digX = x + z;
+                    var digY = y + k;
+                    if (CanDigLocation(digX, digY)) {
+                        Dig(digX, digY);
+                        SaveMineLocationsState(digX, digY);
+                    }
+                }
+            }
+        }
+
+        mineIndex++;
+
+        if (mineIndex >= minesCount) {
+            mineIndex = 0;
+        }
+    }
+}
+
+function RecallTo(runebook, runeIndex) {
+    Orion.Say('All follow me');
+    var mineRunebook = Orion.FindObject(runebook);
+    Orion.UseObject(mineRunebook.Serial());
+    var hook = Orion.CreateGumpHook(runeIndex);
+    Orion.CancelWaitGump();
+    Orion.WaitGump(hook);
+    Orion.Wait(4000);
+}
+
+function OrganizeOre() {
+    Orion.Wait(2000);
+    RecallTo('homeRunebook', '11');
+
+    SmeltOre('packAnimal1');
+    SmeltOre('packAnimal2');
+    SmeltOre('backpack');
+
+    UnloadIngots();
+
+    RecallTo('mineRunebook', -1 + (mineIndex + 1) * 6);
+}
+
+function ShuffleArray(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
+function FindMinesInSurrArea(__private) {
+    var mineWorldLocations = [];
+
+    for (var x = (Player.X() - maxSearchDistance); x < (Player.X() + maxSearchDistance + 1); x += 4) {
+        for (var y = (Player.Y() - maxSearchDistance); y < (Player.Y() + maxSearchDistance + 1); y += 4) {
+            if (Orion.ValidateTargetTile('mine', x, y)) {
+                mineWorldLocations.push({x: x, y: y});
+            }
+        }
+    }
+
+    if (!mineWorldLocations.length) {
+        return mineWorldLocations;
+    }
+
+    ShuffleArray(mineWorldLocations);
+
+    var minePath = [];
+    minePath.push(mineWorldLocations.pop());
+
+    while (mineWorldLocations.length) {
+        var currentMineLocation = minePath[minePath.length - 1];
+        var closestMine = {location: null, distance: 999, index: -1};
+        for (var i = 0; i < mineWorldLocations.length; i++) {
+            var dist = getLocationDistance(currentMineLocation, mineWorldLocations[i]);
+            if (closestMine.distance > dist) {
+                closestMine.location = mineWorldLocations[i];
+                closestMine.distance = dist;
+                closestMine.index = i;
+            }
+        }
+        minePath.push(closestMine.location);
+        mineWorldLocations.splice(closestMine.index, 1);
+    }
+
+    return minePath;
+}
+
+function getLocationDistance(a, b) {
+    return Math.abs(a.x - b.x) + Math.abs(a.y - b.y);
+}
+
+function Dig(x, y) {
+    var CheckTime = (Orion.Now() + 3000);
+    while (!Player.Dead() && Orion.Now() < CheckTime) {
+        var Check1 = Orion.Now();
+        Orion.WaitTargetTile('mine', x, y, 0);
+        Orion.UseType('0x0E86');
+        Orion.Wait(500);
+
+        //Digs same tile until journal check is found or player weight is over weight limit. Add/modify lines to journal check according to the server
+        if (Orion.InJournal("You dig some |You loosen some ", 'my|sys', 0, '0xFFFF', Check1, 0)) {
+            CheckTime = (Orion.Now() + 3000);
+        }
+        else if (Orion.InJournal("no metal | backpack is full| be seen| can't mine | mined is lost.| too far ", 'my|sys', 0, '0xFFFF', Check1, 0)) {
+            return false;
+        }
+        if (Player.Weight() >= Player.MaxWeight() - maxWeightDifference) {
+            if (!SpreadOre()) {
+                OrganizeOre();
+            }
+        }
+        Orion.Wait(500);
+    }
+    return true;
+}
+
+function SmeltOre(container) {
+    Orion.OpenContainer(container, 500);
+    while (true) {
+        var oreList = Orion.FindType(oreType, '-1', lastcontainer);
+        if (!oreList.length) {
+            return;
+        }
+        for (var i = 0; i < oreList.length; i++) {
+            Orion.UseObject(oreList[i], 0);
+            Orion.Wait(500);
+        }
+    }
+
+    Orion.Wait(1000);
+}
+
+function SpreadOre(__private) {
+    if (GetContainerTypeCount('packAnimal1', oreType) < packAnimalOreLimit) {
+        MoveAllItems(oreType, 'packAnimal1');
+        return true;
+    } else if (GetContainerTypeCount('packAnimal2', oreType) < packAnimalOreLimit) {
+        MoveAllItems(oreType, 'packAnimal2');
+        return true;
+    }
+
+    return false;
+}
+
+function MoveAllItems(type, container) {
+    while (true) {
+        var items = Orion.FindType(type);
+        if (!items.length) {
+            return;
+        }
+
+        for (var i = 0; i < items.length; i++) {
+            Orion.MoveItem(items[i], 0, container);
+            Orion.Wait(1000);
+        }
+    }
+}
+
+function GetContainerTypeCount(container, type) {
+    var containerObj = Orion.FindObject(container);
+    Orion.OpenContainer(container, 500);
+    var objList = Orion.FindType(type, '-1', lastcontainer);
+
+    var count = 0;
+    for (var i = 0; i < objList.length; i++) {
+        var obj = Orion.FindObject(objList[i]);
+        count += obj.Count();
+    }
+
+    return count;
+}
+
+function UnloadIngots(__private) {
+    SetIngotContainer();
+
+    var ingotContainer = Orion.FindObject('ingotContainer');
+    Orion.OpenContainer('ingotContainer', 500);
+
+    while (true) {
+        var ingotList = Orion.FindType(ingotType);
+        if (!ingotList.length) {
+            return;
+        }
+
+        for (var i = 0; i < ingotList.length; i++) {
+            Orion.MoveItem(ingotList[i], 0, 'ingotContainer');
+            Orion.Wait(1000);
+        }
+    }
+
+    Orion.Wait(1000);
+}
+
+function SetIngotContainer(__private) {
+    var ingotContainer = Orion.FindObject('ingotContainer');
+    if (ingotContainer == null || ingotContainer == 0) {
+        Orion.Print('Select Ingot Container that you want to use');
+        Orion.AddObject('ingotContainer');
+        Orion.Wait(100);
+        while (Orion.HaveTarget()) {
+            Orion.Wait(500);
+        }
+    }
+}
+
+function SetPackAnimal1(__private) {
+    var packAnimal1 = Orion.FindObject('packAnimal1');
+    if (packAnimal1 == null || packAnimal1 == 0) {
+        Orion.Print('Select First Pack Animal that you want to use');
+        Orion.AddObject('packAnimal1');
+        Orion.Wait(100);
+        while (Orion.HaveTarget()) {
+            Orion.Wait(500);
+        }
+    }
+}
+
+function SetPackAnimal2(__private) {
+    var packAnimal2 = Orion.FindObject('packAnimal2');
+    if (packAnimal2 == null || packAnimal2 == 0) {
+        Orion.Print('Select Second Pack Animal that you want to use');
+        Orion.AddObject('packAnimal2');
+        Orion.Wait(100);
+        while (Orion.HaveTarget()) {
+            Orion.Wait(500);
+        }
+    }
+}
+
+
+function SetMineRunebook(__private) {
+    var mineRunebook = Orion.FindObject('mineRunebook');
+    if (mineRunebook == null || mineRunebook == 0) {
+        Orion.Print('Select Mine Runebook that you want to recall to');
+        Orion.AddObject('mineRunebook');
+        Orion.Wait(100);
+        while (Orion.HaveTarget()) {
+            Orion.Wait(500);
+        }
+    }
+}
+
+function SetHomeRunebook(__private) {
+    var homeRunebook = Orion.FindObject('homeRunebook');
+    if (homeRunebook == null || homeRunebook == 0) {
+        Orion.Print('Select Home Runebook that you want to recall to');
+        Orion.AddObject('homeRunebook');
+        Orion.Wait(100);
+        while (Orion.HaveTarget()) {
+            Orion.Wait(500);
+        }
+    }
+}
