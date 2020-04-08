@@ -1,0 +1,10 @@
+var objectId = '0x13B2';
+while(items = Orion.FindType(objectId, '0x0000', ground, 'items', 1)){
+    for (var i = 0; i < items.length; i++){
+        var obj = Orion.FindObject(items[i]);
+        if (obj != null && !obj.Locked()){
+            Orion.MoveItem(items[i], 0, backpack);
+            Orion.Wait(50);
+        }
+    }
+}
