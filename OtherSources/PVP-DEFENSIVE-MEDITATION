@@ -1,0 +1,15 @@
+
+ while (!Player.Hidden()) {
+	    if (Player.Mana() < Player.MaxMana()){
+
+	    	while (Player.Mana() < Player.MaxMana()){
+	       	
+				Orion.CharPrint(self, Orion.Random(0, 50), "••• MEDITO •••");
+	       		Orion.UseSkill('Meditation');
+	       		Orion.Wait('6000');
+	       	}
+
+	    }
+
+ }
+ 

@@ -1,0 +1,17 @@
+Orion.ClearJournal();
+Orion.WarMode(); 
+Orion.UseWrestlingStun();
+Orion.Wait('100');
+if (Orion.WaitJournal("ready", Orion.Now(), Orion.Now() + 500, "sys")){
+Orion.CharPrint(self,  0xFFFF, "ACTIVE");
+Orion.Attack(Orion.TargetSystemSerial());
+while (!Player.Dead()){
+if (Orion.WaitJournal("successfully", Orion.Now(), Orion.Now() + 3000, "sys")){
+Orion.CharPrint(self, Orion.Random(0, 50), "SUCCESS!");
+}
+}
+} else {
+Orion.CharPrint(self, Orion.Random(0,255), "INACTIVE");
+}
+
+

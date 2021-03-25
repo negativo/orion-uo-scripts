@@ -1,0 +1,18 @@
+Orion.Cast("Flame Strike", Orion.TargetSystemSerial());
+
+    if (Orion.FindType('0x0F0D', '-1', 'self', true).lenght > 0); {
+        BeforeAction = Orion.Now();
+        AfterAction = Orion.Now() + 4000;
+        Orion.ClearJournal();
+        Orion.UseType('0x0F0D', '-1', 'self', true);
+        Orion.Wait(100);
+        Orion.WaitForTarget(5000);
+        Orion.CancelTarget();
+		  Orion.Cast("Flame Strike", Orion.TargetSystemSerial());
+        while (!Orion.InJournal('2', 'my', 0x0001ACE0, -1, BeforeAction, AfterAction)); {
+            Orion.Wait(50);
+        }
+        Orion.Wait('1000');
+        Debug('came trough');
+        Orion.UseType('0x0F0D', '-1', Orion.TargetSystemSerial(), true);
+    }

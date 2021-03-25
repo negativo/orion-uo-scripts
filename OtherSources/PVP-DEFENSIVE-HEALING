@@ -1,0 +1,38 @@
+// This macro will check if you are poisoned 
+// [in this case if you have a potion it will use the potion, otherwise it will cast "cure" on you], 
+// if  your HP are less than the MAXIMUM will start a next check, 
+// if you have a potion it will use the potion to heal you, 
+// else if you don't have the potion and your HP are less then 100 but more than 60, 
+// it will cast HEAL on you, else if your HP are less than 60 it will cast GREATER HEAL on you. 
+// This process will iterate until your status is restored.
+
+  while (!Player.Dead())
+  {
+    if (Player.Poisoned())
+    {
+        if (Orion.FindType('0x0F07', '-1', 'self', true).lenght > 0) {
+            Orion.UseType('0x0F07', '0xFFFF');
+            Orion.Wait(500);
+        } else {
+            Orion.Cast('Cure', 'Self');
+            Orion.Wait(500);
+        }
+    }
+    if (Player.Hits() < Player.MaxHits()){
+
+      if (Orion.FindType('0x0F0C', '-1', 'self', true).lenght > 0) {
+              Orion.UseType('0x0F07', '0x0F0C');
+              Orion.Wait(500);
+      }
+      else if (Player.Hits() < 100 && Player.Hits() > 60) 
+      {
+           Orion.Cast('Heal', 'Self');
+           Orion.Wait(500);
+      }
+      else if (Player.Hits() < 60) 
+      {
+           Orion.Cast('Greater Heal', 'Self');
+           Orion.Wait(500);
+      }
+    }
+  }

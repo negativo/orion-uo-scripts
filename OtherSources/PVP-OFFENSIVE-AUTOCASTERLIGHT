@@ -1,0 +1,13 @@
+var Enemy = Orion.FindObject(Orion.TargetSystemSerial());
+
+    if (Enemy.Hits() == Enemy.MaxHits() ){
+		Orion.Cast("Curse", Orion.TargetSystemSerial());
+  	} else if (Enemy.Poisoned()) {
+		Orion.Cast("Lightning", Orion.TargetSystemSerial());
+    } else {
+    	Orion.Cast("Poison", Orion.TargetSystemSerial());
+    }
+	
+    if (Orion.FindType('0x0F0D', '-1', 'self', true).lenght > 0); {
+        Orion.UseType('0x0F0D', '-1', Orion.TargetSystemSerial(), true);
+    }

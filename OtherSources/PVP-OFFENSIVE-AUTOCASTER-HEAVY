@@ -1,0 +1,11 @@
+var Enemy = Orion.FindObject(Orion.TargetSystemSerial());
+
+    if (Enemy.Hits() == Enemy.MaxHits() ){
+		Orion.Cast("Explosion", Orion.TargetSystemSerial());
+  	} else {
+		Orion.Cast("Mind Blast", Orion.TargetSystemSerial());
+    }
+	
+    if (Orion.FindType('0x0F0D', '-1', 'self', true).lenght > 0); {
+        Orion.UseType('0x0F0D', '-1', Orion.TargetSystemSerial(), true);
+    }

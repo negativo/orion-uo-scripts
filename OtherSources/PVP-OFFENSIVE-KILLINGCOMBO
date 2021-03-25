@@ -1,0 +1,22 @@
+
+Orion.CharPrint(self, Orion.Random(0, 50), "0 - CASTING PARALYZE");
+Orion.Cast("Paralyze", Orion.TargetSystemSerial());
+Orion.Wait('2550');
+Orion.CharPrint(self, Orion.Random(0, 50), "1 - CASTING EXPLOSION");
+Orion.Cast("Explosion", Orion.TargetSystemSerial());
+Orion.Wait('2550');
+Orion.ClearJournal();
+Orion.CharPrint(self, Orion.Random(0, 50), "2 - CASTING MINDBLAST");
+Orion.Cast("Mind Blast", Orion.TargetSystemSerial());
+Orion.Wait('100');
+
+    if (Orion.FindType('0x0F0D', '-1', 'self', true).lenght > 0); {
+        Orion.UseType('0x0F0D', '-1', 'self', true);
+        Orion.WaitForTarget(5000);
+        Orion.CancelTarget();
+        Orion.UseType('0x0F0D', '-1', Orion.TargetSystemSerial(), true);
+    }
+    
+Orion.Wait('2050');
+Orion.CharPrint(self, Orion.Random(0, 50), "3 - CASTING MINDBLAST");
+Orion.Cast("Mind Blast", Orion.TargetSystemSerial());
