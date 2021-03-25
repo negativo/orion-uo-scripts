@@ -1,0 +1,26 @@
+var searchDistance = 20;
+function main() {
+    while (true) {
+        var target = Orion.FindType(getAnimals(), '-1', ground, 'fast|mobile|live', searchDistance);
+        if (target.length) {
+      
+          	   Orion.Cast('Energy Bolt');
+					Orion.WaitTargetObject('lasttarget');
+					 if (Orion.WaitForTarget(2500))
+				    Orion.WaitTargetObject('lasttarget');
+		
+			 Orion.Wait(100);
+       }
+   }
+}
+
+function getAnimals() {
+    // Set Animal types and return a string with all the animals.
+    var toTame = [
+        '0x0190',
+        '0x0191',
+    ]; 
+
+    return toTame.join('|');
+}
+
