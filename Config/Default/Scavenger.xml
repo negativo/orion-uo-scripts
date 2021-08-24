@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data version="0" size="2">
+    <scavenger name="New list" container="0x42B7623A" find_list="head" ignore_list="Not use" check_weight_limit="true" selected="true" autostart_on_login="false"/>
+    <scavenger name="pk" container="" find_list="All items" ignore_list="Not use" check_weight_limit="true" selected="false" autostart_on_login="false"/>
+</data>

@@ -42,21 +42,26 @@ while(true){
          var bow = Orion.FindType('0x26C2','0x04AA|0x047F|0x04A9|0x07DA|0x04A7|0x0000|0x04A8',backpack);
 			Orion.Wait(500);
 			var theBow = Orion.FindObject(bow[0]);
-			if(Orion.Contains(theBow.Properties(), 'Unidentified')){
-         		Orion.MoveItem(theBow.Serial(), -1, slayerContainer.Serial());
-         	}
+			if(theBow){
+				if(Orion.Contains(theBow.Properties(), 'Unidentified')){
+	         		Orion.MoveItem(theBow.Serial(), -1, slayerContainer.Serial());
+	         	}
+         	
          	Orion.Wait(400);
+         	}
 		}else{
 			//trash it
     		Orion.Print('Normal Bow moving ');
-        	 var bow = Orion.FindType('0x26C2', '0x04AA|0x047F|0x04A9|0x07DA|0x04A7|0x04A8|0x0000', backpack);
+        	 var bow = Orion.FindType('0x26C2', '0x04AA|0x047F|0x04A9|0x07DA|0x04A7|0x04A8', backpack);
 			Orion.Wait(500);
 			
 			var theBow = Orion.FindObject(bow[0]);
-			if(!Orion.Contains(theBow.Properties(), 'Unidentified')){
-         		Orion.MoveItem(theBow.Serial(), -1, normalContainer.Serial());
+			if(theBow){
+				if(!Orion.Contains(theBow.Properties(), 'Unidentified')){
+	         		Orion.MoveItem(theBow.Serial(), -1, normalContainer.Serial());
+	         	}
+         		Orion.Wait(300);
          	}
-         	Orion.Wait(300);
 		}
-	
  }
+ 

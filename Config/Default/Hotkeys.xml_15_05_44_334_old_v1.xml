@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data version="1" size="16">
+    <hotkey type="24" action="0" running_mode="false" key="2" modifiers="1" name="" external_code="" toggle_script="false"/>
+    <hotkey type="0" action="0" running_mode="false" key="1" modifiers="1" name="drink heal" external_code="" toggle_script="false"/>
+    <hotkey type="23" action="1" running_mode="false" key="8" modifiers="64" name="" external_code="" toggle_script="false"/>
+    <hotkey type="23" action="0" running_mode="false" key="16" modifiers="64" name="" external_code="" toggle_script="false"/>
+    <hotkey type="0" action="0" running_mode="false" key="4" modifiers="1" name="drink cure" external_code="" toggle_script="false"/>
+    <hotkey type="0" action="0" running_mode="false" key="4" modifiers="9" name="drink agility" external_code="" toggle_script="false"/>
+    <hotkey type="0" action="0" running_mode="false" key="70" modifiers="0" name="forbici to get target" external_code="" toggle_script="false"/>
+    <hotkey type="0" action="0" running_mode="false" key="82" modifiers="2" name="explotion potion" external_code="" toggle_script="false"/>
+    <hotkey type="0" action="0" running_mode="false" key="52" modifiers="2" name="remove paralyze" external_code="" toggle_script="false"/>
+    <hotkey type="0" action="0" running_mode="false" key="76" modifiers="8" name="recalll" external_code="" toggle_script="false"/>
+    <hotkey type="2" action="4294967295" running_mode="false" key="69" modifiers="8" name="main" external_code="" toggle_script="true"/>
+    <hotkey type="23" action="2" running_mode="true" key="68" modifiers="8" name="" external_code="" toggle_script="false"/>
+    <hotkey type="0" action="0" running_mode="false" key="1" modifiers="9" name="drink strength" external_code="" toggle_script="false"/>
+    <hotkey type="2" action="0" running_mode="false" key="16" modifiers="72" name="punch" external_code="" toggle_script="false"/>
+    <hotkey type="0" action="0" running_mode="false" key="2" modifiers="9" name="RED POTION" external_code="" toggle_script="false"/>
+</data>

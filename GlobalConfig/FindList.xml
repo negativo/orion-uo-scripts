@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data version="0" size="28">
+    <findlist name="logs">
+        <item graphic="0x1BDD" color="0x04A9" comment="" count="0"/>
+        <item graphic="0x1BDD" color="0x047F" comment="" count="0"/>
+        <item graphic="0x1BDD" color="0x0000" comment="" count="0"/>
+        <item graphic="0x1BDD" color="0x04A9" comment="" count="0"/>
+        <item graphic="0x1BDD" color="0x04A7" comment="" count="0"/>
+        <item graphic="0x1BDD" color="0x04A8" comment="" count="0"/>
+        <item graphic="0x1BDD" color="0x04AA" comment="" count="0"/>
+        <item graphic="0x1BDD" color="0x07DA" comment="" count="0"/>
+    </findlist>
+    <findlist name="logs_copy">
+        <item graphic="0x1BDD" color="0x04A9" comment="" count="0"/>
+        <item graphic="0x1BDD" color="0x047F" comment="" count="0"/>
+        <item graphic="0x1BDD" color="0x0000" comment="" count="0"/>
+    </findlist>
+    <findlist name="reag">
+        <item graphic="0x0F7B" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F88" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F86" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F85" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F7A" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F84" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F8D" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F8C" color="0x0000" comment="" count="60"/>
+    </findlist>
+    <findlist name="pots">
+        <item graphic="0x0F0A" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F0A" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F0D" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F0A" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F0C" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F09" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F07" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F0B" color="0x0000" comment="8 Greater Refreshment Potion" count="0"/>
+        <item graphic="0x0F07" color="0x0000" comment="Greater Cure Potion" count="0"/>
+    </findlist>
+    <findlist name="club">
+        <item graphic="0x0E89" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0E89" color="0x0000" comment="" count="0"/>
+        <item graphic="0x13F8" color="0x0000" comment="gnarled staff" count="0"/>
+        <item graphic="0x0E81" color="0x0000" comment="shepherd's crook" count="0"/>
+    </findlist>
+    <findlist name="mortar">
+        <item graphic="0x0E9B" color="0x0000" comment="" count="0"/>
+    </findlist>
+    <findlist name="pets">
+        <item graphic="0x00D6" color="0x0901" comment="a panther" count="0"/>
+        <item graphic="0x00E1" color="0x0000" comment="a timber wolf" count="0"/>
+    </findlist>
+    <findlist name="pouch">
+        <item graphic="0x0E79" color="0x0026" comment="" count="0"/>
+    </findlist>
+    <findlist name="reag_copy">
+        <item graphic="0x0F7B" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F88" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F86" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F85" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F7A" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F84" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F8D" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F8C" color="0x0000" comment="" count="0"/>
+    </findlist>
+    <findlist name="bows">
+        <item graphic="0x26C2" color="0x0000" comment="Composite Bow" count="0"/>
+        <item graphic="0x26C2" color="0x04A7" comment="Composite Bow" count="0"/>
+        <item graphic="0x26C2" color="0x07DA" comment="" count="0"/>
+        <item graphic="0x26C2" color="0x04A8" comment="composite bow" count="0"/>
+        <item graphic="0x26C2" color="0x04A9" comment="Composite Bow" count="0"/>
+        <item graphic="0x26C2" color="0x047F" comment="" count="0"/>
+        <item graphic="0x26C2" color="0x04AA" comment="" count="0"/>
+    </findlist>
+    <findlist name="maps">
+        <item graphic="0x14EC" color="0x0000" comment="" count="60"/>
+    </findlist>
+    <findlist name="arrow scroll head">
+        <item graphic="0x2260" color="any" comment="" count="0"/>
+        <item graphic="0x0F3F" color="0x0000" comment="" count="0"/>
+        <item graphic="0x35DA" color="0x0000" comment="" count="0"/>
+        <item graphic="0x1CE1" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0F7E" color="0x0000" comment="" count="0"/>
+    </findlist>
+    <findlist name="tinker">
+        <item graphic="0x1EBC" color="0x0000" comment="" count="0"/>
+    </findlist>
+    <findlist name="gold arrow scroll head_copy">
+        <item graphic="0x2260" color="any" comment="" count="0"/>
+        <item graphic="0x0F3F" color="0x0000" comment="" count="0"/>
+        <item graphic="0x35DA" color="0x0000" comment="" count="0"/>
+        <item graphic="0x1CE1" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0EED" color="0x0000" comment="" count="0"/>
+        <item graphic="0x26B4" color="any" comment="2 Blue Scales" count="0"/>
+        <item graphic="0x1F19" color="any" comment="Multi-faceted Charged Crystal" count="0"/>
+        <item graphic="0x1CE1" color="any" comment="The Head" count="0"/>
+        <item graphic="0x0C65" color="0x0494" comment="Dragon Fruit" count="0"/>
+        <item graphic="0x0C65" color="0x0494" comment="Escape" count="0"/>
+        <item graphic="0x47E6" color="0x0495" comment="A Dragon Egg" count="0"/>
+    </findlist>
+    <findlist name="carp stuff">
+        <item graphic="0x13F8" color="0x04A7" comment="Gnarled Staff" count="0"/>
+    </findlist>
+    <findlist name="gold arrow scroll head_copy_co">
+        <item graphic="0x2AA4" color="any" comment="A Quicksilver Relic" count="0"/>
+        <item graphic="0x2260" color="any" comment="" count="0"/>
+        <item graphic="0x0F3F" color="0x0000" comment="" count="0"/>
+        <item graphic="0x35DA" color="0x0000" comment="" count="0"/>
+        <item graphic="0x1CE1" color="0x0000" comment="" count="0"/>
+    </findlist>
+    <findlist name="quarter">
+        <item graphic="0x0E89" color="0x0000" comment="Quarter Staff" count="0"/>
+    </findlist>
+    <findlist name="reag_dex">
+        <item graphic="0x0F7B" color="0x0000" comment="" count="30"/>
+        <item graphic="0x0F88" color="0x0000" comment="" count="30"/>
+        <item graphic="0x0F86" color="0x0000" comment="" count="30"/>
+        <item graphic="0x0F85" color="0x0000" comment="" count="30"/>
+        <item graphic="0x0F7A" color="0x0000" comment="" count="30"/>
+        <item graphic="0x0F84" color="0x0000" comment="" count="30"/>
+        <item graphic="0x0F8D" color="0x0000" comment="" count="30"/>
+        <item graphic="0x0F8C" color="0x0000" comment="" count="30"/>
+    </findlist>
+    <findlist name="testa">
+        <item graphic="0x1CE1" color="0x0000" comment="The Head Of Demerzel" count="0"/>
+    </findlist>
+    <findlist name="relic">
+        <item graphic="0x2260" color="any" comment="A Skill Scroll" count="0"/>
+    </findlist>
+    <findlist name="reag_tamer">
+        <item graphic="0x0F7B" color="0x0000" comment="" count="80"/>
+        <item graphic="0x0F88" color="0x0000" comment="" count="80"/>
+        <item graphic="0x0F86" color="0x0000" comment="" count="120"/>
+        <item graphic="0x0F85" color="0x0000" comment="" count="120"/>
+        <item graphic="0x0F7A" color="0x0000" comment="" count="80"/>
+        <item graphic="0x0F84" color="0x0000" comment="" count="120"/>
+        <item graphic="0x0F8D" color="0x0000" comment="" count="120"/>
+        <item graphic="0x0F8C" color="0x0000" comment="" count="80"/>
+        <item graphic="0x0E21" color="0x0000" comment="2707 Clean Bandage" count="150"/>
+    </findlist>
+    <findlist name="sdsd">
+        <item graphic="0x47E6" color="0x0495" comment="A Dragon Egg" count="0"/>
+        <item graphic="0x26B4" color="any" comment="2 Blue Scales" count="0"/>
+        <item graphic="0x1F19" color="any" comment="Multi-faceted Charged Crystal" count="0"/>
+        <item graphic="0x1CE1" color="any" comment="The Head" count="0"/>
+        <item graphic="0x0C65" color="0x0494" comment="Dragon Fruit" count="0"/>
+        <item graphic="0x0C65" color="0x0494" comment="Escape" count="0"/>
+    </findlist>
+    <findlist name="reag_tamer_light">
+        <item graphic="0x0F7B" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F88" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F86" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F85" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F7A" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F84" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F8D" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0F8C" color="0x0000" comment="" count="60"/>
+        <item graphic="0x0E21" color="0x0000" comment="2707 Clean Bandage" count="80"/>
+    </findlist>
+    <findlist name="axias">
+        <item graphic="0x0F7B" color="0x0000" comment="" count="15"/>
+        <item graphic="0x0F88" color="0x0000" comment="" count="15"/>
+        <item graphic="0x0F86" color="0x0000" comment="" count="15"/>
+        <item graphic="0x0F85" color="0x0000" comment="" count="15"/>
+        <item graphic="0x0F7A" color="0x0000" comment="" count="15"/>
+        <item graphic="0x0F84" color="0x0000" comment="" count="15"/>
+        <item graphic="0x0F8D" color="0x0000" comment="" count="15"/>
+        <item graphic="0x0F8C" color="0x0000" comment="" count="15"/>
+        <item graphic="0x0E21" color="0x0000" comment="2707 Clean Bandage" count="150"/>
+        <item graphic="0x0F3F" color="0x0000" comment="15230 Arrow" count="500"/>
+    </findlist>
+    <findlist name="bag">
+        <item graphic="0x0E76" color="any" comment="Armor" count="0"/>
+    </findlist>
+    <findlist name="sdsd_copy">
+        <item graphic="0x0F3F" color="0x0000" comment="" count="0"/>
+        <item graphic="0x35DA" color="0x0000" comment="" count="0"/>
+        <item graphic="0x1CE1" color="0x0000" comment="" count="0"/>
+        <item graphic="0x0EED" color="0x0000" comment="" count="0"/>
+        <item graphic="0x26B4" color="any" comment="2 Blue Scales" count="0"/>
+        <item graphic="0x1F19" color="any" comment="Multi-faceted Charged Crystal" count="0"/>
+        <item graphic="0x1CE1" color="any" comment="The Head" count="0"/>
+        <item graphic="0x0C65" color="0x0494" comment="Dragon Fruit" count="0"/>
+        <item graphic="0x0C65" color="0x0494" comment="Escape" count="0"/>
+        <item graphic="0x47E6" color="0x0495" comment="A Dragon Egg" count="0"/>
+    </findlist>
+    <findlist name="head">
+        <item graphic="0x1CE1" color="any" comment="The Head" count="0"/>
+    </findlist>
+</data>

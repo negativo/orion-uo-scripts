@@ -1,9 +1,9 @@
-var axe = '0x441C4576';
+var axe = '0x40033C58';
 var lumbArea = 5;
-var logbox = '0x421BBCA6';
+var logbox = Player.BankSerial();
 Orion.Print("currently at: "+ Player.X()+" "+Player.Y());
- var bankx = 2493;
- var banky = 559;
+ var bankx = 1645;
+ var banky = 1615;
 var treeWorldLocation;
 var emptyTrees = [];
 treeWorldLocation = FindTreesInSurrArea();
@@ -15,6 +15,7 @@ function CutTreeByWorldLoc()
 		Orion.WalkTo(treeWorldLocation[i][0],treeWorldLocation[i][1],0);
 		Orion.Wait(1000);
 		LumberAgain(treeWorldLocation[i][0],treeWorldLocation[i][1], i);
+		
 		
 		if(Player.Weight() >=  Player.MaxWeight()){
 			goBank();
@@ -113,6 +114,8 @@ function goBank(){
   py = Player.X();
   while(px !== posx && py !== posy){
   	
+  Orion.WalkTo(posx,posy,0);
+  Orion.Wait(1000);
   }
   CutTreeByWorldLoc();
 }
@@ -150,19 +153,21 @@ function createArr(x, y) {
 }
 
 function LumberAgain(x,y,i){
-	var text = 'not enough wood|That is too far away|no line of sight|place any wood into|cannot be seen';
-	while(Player.Hits()<90){
+	var text = 'There is nothing|not enough wood|That is too far away|no line of sight|place any wood into|cannot be seen';
+	//while(Player.Hits()<90){
 	
-	    Orion.Equip(axe);
-	    Orion.Wait(100);
-		Orion.UseType('0x0E21', '0xFFFF');
-		if (Orion.WaitForTarget(1000)){
-			Orion.TargetObject('self');	
-		}
-		Orion.Wait(3000);
-	}
+	  //  Orion.Equip(axe);
+	//    Orion.Wait(100);
+	//	Orion.UseType('0x0E21', '0xFFFF');
+	//	if (Orion.WaitForTarget(1000)){
+	//		Orion.TargetObject('self');	
+	//	}
+//		Orion.Wait(3000);
+	//}
 	while (!Player.Dead()){
-	   if(Player.Poisoned()){
+	
+		Orion.Print('tile2s');
+		   if(Player.Poisoned()){
 	     Orion.Disarm();
 	     Orion.Wait(100);
 	     
@@ -172,16 +177,20 @@ function LumberAgain(x,y,i){
 	     Orion.Wait(100);
 	     
 	   }
-		while(Player.Hits()<90){
+		Orion.Print('tile2s');
+	//	while(Player.Hits()<90){
 		// cure pot 0x0F07
-			Orion.UseType('0x0E21', '0xFFFF');
-			if (Orion.WaitForTarget(1000)){
-				Orion.TargetObject('self');	
-			}
-			Orion.Wait(3000);
-		}
+		//	Orion.UseType('0x0E21', '0xFFFF');
+		//	if (Orion.WaitForTarget(1000)){
+		//		Orion.TargetObject('self');	
+	//		}
+	//		Orion.Wait(3000);
+	//	}
+		Orion.Print('tiles');
 		Orion.UseObject(axe);
+			Orion.Wait(100);
 		Orion.WaitTargetTile('tree',x,y,0);
+		
 		var msg = Orion.WaitJournal(text, Orion.Now(), Orion.Now() + 5000, 'sys|my');
 		if(msg !=null){	
 			Orion.Print("Removing tree " + treeWorldLocation.length);

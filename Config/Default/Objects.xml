@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data version="0" size="9" dressbag="0x00000000" catchbag="0x00000000">
+    <object name="target" id="0x0059A570"/>
+    <object name="0x0001BD56" id="0x0002085E"/>
+    <object name="friend" id="0x00120664"/>
+    <object name="reagToContainer" id="0x41097562"/>
+    <object name="slayerContainer" id="0x419831E8"/>
+    <object name="normalContainer" id="0x4169B3D5"/>
+    <object name="wa" id="0x44DF3E78"/>
+    <object name="weaponToSteal" id="0x40CEFD2B"/>
+    <object name="moongate" id="0x42DA40F2"/>
+</data>

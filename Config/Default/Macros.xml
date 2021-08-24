@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data cast_spells_from_book_if_not_scrolls="false">
+    <macro name="forbici to get target" looped="false" delay="1">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x423FD252" graphic="0x0F52" color="0x0000"/>
+    </macro>
+    <macro name="explotion potion" looped="false" delay="4">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x4151128D" graphic="0x0F0D" color="0x0000"/>
+    </macro>
+    <macro name="drink cure" looped="false" delay="3">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x42367778" graphic="0x0F07" color="0x0000"/>
+    </macro>
+    <macro name="remove paralyze" looped="false" delay="4">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x41AE4ABB" graphic="0x0E79" color="0x0026"/>
+    </macro>
+    <macro name="recalll" looped="false" delay="1">
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x41A34F4B" graphic="0x22C5" color="0x0846"/>
+        <action type="15" convert_type="0" waiting_time="1000" serial="0x028300A7" id="0x554B87F3" button="5"/>
+    </macro>
+    <macro name="attack" looped="true" delay="1">
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x42554FF6" graphic="0x0E21" color="0x0000"/>
+        <action type="3" convert_type="9" waiting_time="1000" serial="0x00310DA7" graphic="0x0191" color="0x83EA"/>
+    </macro>
+    <macro name="macro" looped="true" delay="1">
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x42DD134A" graphic="0x0EB2" color="0x0000"/>
+        <action type="5" convert_type="0" waiting_time="1000" value="22"/>
+        <action type="3" convert_type="0" waiting_time="1000" serial="0x0019C703" graphic="0x009B" color="0x0000"/>
+        <action type="3" convert_type="9" waiting_time="1000" serial="0x00310DA7" graphic="0x0191" color="0x83EA"/>
+    </macro>
+    <macro name="macro_1" looped="true" delay="5">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x436DF060" graphic="0x0EB3" color="0x0000"/>
+        <action type="5" convert_type="0" waiting_time="1000" value="22"/>
+        <action type="3" convert_type="0" waiting_time="1000" serial="0x001B3626" graphic="0x009B" color="0x0000"/>
+        <action type="3" convert_type="9" waiting_time="1000" serial="0x00310DA7" graphic="0x0191" color="0x83EA"/>
+    </macro>
+    <macro name="magery res spells" looped="true" delay="1">
+        <action type="8" convert_type="0" waiting_time="1000" value="53"/>
+        <action type="3" convert_type="9" waiting_time="3000" serial="0x0011B27B" graphic="0x0190" color="0x83EA"/>
+    </macro>
+    <macro name="magery res healing" looped="false" delay="2">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x424ACBA1" graphic="0x0E21" color="0x0000"/>
+        <action type="3" convert_type="9" waiting_time="1000" serial="0x0011B27B" graphic="0x0190" color="0x83EA"/>
+        <action type="8" convert_type="0" waiting_time="1000" value="51"/>
+        <action type="3" convert_type="9" waiting_time="2500" serial="0x0011B27B" graphic="0x0190" color="0x83EA"/>
+    </macro>
+    <macro name="drink strength" looped="false" delay="1">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x441BE932" graphic="0x0F09" color="0x0000"/>
+    </macro>
+    <macro name="drink heal" looped="false" delay="1">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x40133503" graphic="0x0F0C" color="0x0000"/>
+    </macro>
+    <macro name="drink agility" looped="false" delay="1">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x441BE40B" graphic="0x0F08" color="0x0000"/>
+    </macro>
+    <macro name="recall brit" looped="false" delay="1">
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x480E0C25" graphic="0x22C5" color="0x08AB"/>
+        <action type="15" convert_type="0" waiting_time="1000" serial="0x00813D25" id="0x554B87F3" button="11"/>
+    </macro>
+    <macro name="t" looped="true" delay="5">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x40F4A489" graphic="0x0E9B" color="0x0000"/>
+        <action type="15" convert_type="0" waiting_time="1000" serial="0x0025DBE7" id="0x38920ABD" button="43"/>
+        <action type="15" convert_type="0" waiting_time="1000" serial="0x0025DBF9" id="0x38920ABD" button="16"/>
+    </macro>
+    <macro name="bandage" looped="true" delay="2">
+        <action type="8" convert_type="0" waiting_time="1000" value="53"/>
+        <action type="3" convert_type="9" waiting_time="2500" serial="0x00223CF1" graphic="0x0190" color="0x83EA"/>
+    </macro>
+    <macro name="snooping" looped="true" delay="1">
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x467884A0" graphic="0x0E75" color="0x0000"/>
+    </macro>
+    <macro name="magery" looped="true" delay="1">
+        <action type="8" convert_type="0" waiting_time="1000" value="53"/>
+        <action type="3" convert_type="9" waiting_time="1000" serial="0x001A4A90" graphic="0x0190" color="0x83EA"/>
+    </macro>
+    <macro name="bows" looped="true" delay="2">
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x41362B19" graphic="0x1022" color="0x0000"/>
+        <action type="15" convert_type="0" waiting_time="1000" serial="0x00144387" id="0x38920ABD" button="15"/>
+        <action type="15" convert_type="0" waiting_time="1000" serial="0x00144391" id="0x38920ABD" button="2"/>
+    </macro>
+    <macro name="detect" looped="true" delay="1">
+        <action type="5" convert_type="0" waiting_time="1000" value="14"/>
+        <action type="4" convert_type="0" waiting_time="1000" graphic="0x07A3" x="6032" y="1500" z="25" relative_x="0" relative_y="-1" relative_z="-6"/>
+    </macro>
+    <macro name="alchemy" looped="true" delay="2">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x42EC509E" graphic="0x0E9B" color="0x0000"/>
+        <action type="15" convert_type="0" waiting_time="1000" serial="0x0033E46C" id="0x38920ABD" button="36"/>
+        <action type="15" convert_type="0" waiting_time="1000" serial="0x0033E47F" id="0x38920ABD" button="23"/>
+    </macro>
+    <macro name="hiding" looped="true" delay="15">
+        <action type="5" convert_type="0" waiting_time="1000" value="21"/>
+    </macro>
+    <macro name="stealing" looped="false" delay="1">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x420A6F69" graphic="0x0F45" color="0x0000"/>
+    </macro>
+    <macro name="peace" looped="true" delay="3">
+        <action type="5" convert_type="0" waiting_time="1000" value="2"/>
+        <action type="3" convert_type="0" waiting_time="1000" serial="0x00329999" graphic="0x00D6" color="0x0901"/>
+    </macro>
+    <macro name="animals" looped="false" delay="1">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x0033D283" graphic="0x00D3" color="0x0000"/>
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x0031ED3B" graphic="0x00D6" color="0x0901"/>
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x0033C883" graphic="0x00E1" color="0x0000"/>
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x0033203E" graphic="0x0058" color="0x0000"/>
+    </macro>
+    <macro name="animals  2" looped="true" delay="100">
+        <action type="20" convert_type="0" waiting_time="1000" value="-129"/>
+        <action type="20" convert_type="0" waiting_time="1000" value="1"/>
+        <action type="20" convert_type="0" waiting_time="1000" value="-133"/>
+        <action type="20" convert_type="0" waiting_time="1000" value="5"/>
+    </macro>
+    <macro name="macro_2" looped="true" delay="7">
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x001BE8FF" graphic="0x0191" color="0x8420"/>
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x4C759906" graphic="0x0EED" color="0x0000"/>
+    </macro>
+    <macro name="vet" looped="true" delay="3">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x4C70126F" graphic="0x0E21" color="0x0000"/>
+        <action type="3" convert_type="11" waiting_time="1000" serial="0x0054D23C" graphic="0x00B4" color="0x0000"/>
+    </macro>
+    <macro name="Heal Liam" looped="true" delay="2">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x43CCF91B" graphic="0x0E21" color="0x0000"/>
+        <action type="3" convert_type="0" waiting_time="1000" serial="0x00073F63" graphic="0x058D" color="0x0000"/>
+    </macro>
+    <macro name="Heal Ben" looped="true" delay="4">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x0036D0D9" graphic="0x0190" color="0x0000"/>
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x0036D35F" graphic="0x0191" color="0x83FB"/>
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x0036CD7F" graphic="0x0190" color="0x0000"/>
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x0036CF37" graphic="0x0190" color="0x0000"/>
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x0036D684" graphic="0x0191" color="0x8408"/>
+    </macro>
+    <macro name="macro_3" looped="true" delay="7">
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x421BBCA6" graphic="0x09AA" color="0x0000"/>
+    </macro>
+    <macro name="poison weapon" looped="false" delay="1">
+        <action type="5" convert_type="0" waiting_time="1000" value="30"/>
+        <action type="3" convert_type="1" waiting_time="1000" serial="0x4159A44A" graphic="0x0F0A" color="0x0000"/>
+    </macro>
+    <macro name="explo enrgy" looped="false" delay="1">
+        <action type="8" convert_type="0" waiting_time="1000" value="43"/>
+        <action type="3" convert_type="11" waiting_time="2000" serial="0x00152659" graphic="0x0190" color="0x83EA"/>
+        <action type="1000" convert_type="0" waiting_time="650"/>
+        <action type="8" convert_type="0" waiting_time="1000" value="42"/>
+        <action type="3" convert_type="11" waiting_time="2000" serial="0x00152659" graphic="0x0190" color="0x83EA"/>
+    </macro>
+    <macro name="explo mind" looped="true" delay="1">
+        <action type="8" convert_type="0" waiting_time="1000" value="43"/>
+        <action type="3" convert_type="11" waiting_time="2000" serial="0x00152659" graphic="0x0190" color="0x83EA"/>
+        <action type="1000" convert_type="0" waiting_time="650"/>
+        <action type="8" convert_type="0" waiting_time="1000" value="37"/>
+        <action type="3" convert_type="11" waiting_time="1750" serial="0x00152659" graphic="0x0190" color="0x83EA"/>
+    </macro>
+    <macro name="refill potions zerk" looped="true" delay="0.7">
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x41F096E2" graphic="0x1940" color="0x0085"/>
+        <action type="1000" convert_type="0" waiting_time="700"/>
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x40B63E21" graphic="0x1940" color="0x0035"/>
+        <action type="1000" convert_type="0" waiting_time="700"/>
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x40B63E21" graphic="0x1940" color="0x0035"/>
+        <action type="1000" convert_type="0" waiting_time="700"/>
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x41F096E2" graphic="0x1940" color="0x0085"/>
+        <action type="1000" convert_type="0" waiting_time="700"/>
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x42E0B3EB" graphic="0x1940" color="0x03DF"/>
+    </macro>
+    <macro name="RED POTION" looped="false" delay="1">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x4160B4D6" graphic="0x0F0B" color="0x0000"/>
+    </macro>
+    <macro name="macro_4" looped="true" delay="1.7">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x42E9FB4A" graphic="0x14F0" color="0x0A66"/>
+    </macro>
+    <macro name="wand light" looped="false" delay="1">
+        <action type="10" convert_type="0" waiting_time="300" serial="0x42F31A83" graphic="0x0DF2" color="0x0000" count="1"/>
+        <action type="12" convert_type="0" waiting_time="300" layer="1" container="0x001A4A90"/>
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x42F31A83" graphic="0x0DF2" color="0x0000"/>
+        <action type="3" convert_type="11" waiting_time="1000" serial="0x000BC9BB" graphic="0x0191" color="0x83EA"/>
+    </macro>
+    <macro name="wand heal" looped="false" delay="1">
+        <action type="10" convert_type="0" waiting_time="300" serial="0x42F31A83" graphic="0x0DF2" color="0x0000" count="0"/>
+        <action type="11" convert_type="0" waiting_time="500" x="69" y="80" z="0" slot="0" container="0x42FC6A7E" relative_x="-89" relative_y="16" relative_z="0"/>
+    </macro>
+    <macro name="pouchhh" looped="false" delay="1">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x415BF9F8" graphic="0x0E79" color="0x0026"/>
+        <action type="8" convert_type="0" waiting_time="1000" value="13"/>
+        <action type="3" convert_type="1" waiting_time="1050" serial="0x415BF9F8" graphic="0x0E79" color="0x0000"/>
+    </macro>
+    <macro name="macro_5" looped="true" delay="1.1">
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x42B170DF" graphic="0x2260" color="0x0025"/>
+        <action type="15" convert_type="0" waiting_time="1000" serial="0x007C90F0" id="0x59640CFB" button="1"/>
+    </macro>
+    <macro name="buy" looped="false" delay="1">
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x41D26CFB" graphic="0x0F52" color="0x0000"/>
+        <action type="3" convert_type="1" waiting_time="1000" serial="0x40725266" graphic="0x1940" color="0x005D"/>
+        <action type="1000" convert_type="0" waiting_time="100"/>
+        <action type="1000" convert_type="0" waiting_time="500"/>
+        <action type="16" convert_type="11" waiting_time="1000" serial="0x41B8FF3C" graphic="0x0000" color="0x0000"/>
+        <action type="17" convert_type="0" waiting_time="1000" serial="0x41B8FF3C" graphic="0x0000" color="0x0000"/>
+        <action type="15" convert_type="0" waiting_time="1000" serial="0x003018E0" id="0xFECE3C0F" button="1"/>
+        <action type="1000" convert_type="0" waiting_time="500"/>
+        <action type="10" convert_type="0" waiting_time="300" serial="0x41B8FF3C" graphic="0x1940" color="0x005D" count="1"/>
+        <action type="11" convert_type="0" waiting_time="500" x="65535" y="65535" z="0" slot="255" container="0x0004AAFE" relative_x="-87" relative_y="-119" relative_z="-7"/>
+    </macro>
+    <macro name="mount" looped="false" delay="1">
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x003B4984" graphic="0x0074" color="0x0000"/>
+    </macro>
+    <macro name="flamescroll" looped="false" delay="1">
+        <action type="1" convert_type="1" waiting_time="1000" serial="0x401E1C82" graphic="0x1F5F" color="0x0000"/>
+    </macro>
+    <macro name="moongate" looped="false" delay="1">
+        <action type="1" convert_type="0" waiting_time="1000" serial="0x42DA2E73" graphic="0x0F6C" color="0x0000"/>
+    </macro>
+    <macro name="openbettle" looped="false" delay="1">
+        <action type="1" convert_type="9" waiting_time="1000" serial="0x00310DA7" graphic="0x0191" color="0x83EA"/>
+        <action type="16" convert_type="0" waiting_time="1000" serial="0x001EEB37" graphic="0x0000" color="0x0000"/>
+        <action type="17" convert_type="0" waiting_time="1000" serial="0x001EEB37" graphic="0x000A" color="0x0000"/>
+    </macro>
+</data>

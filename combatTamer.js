@@ -12,7 +12,7 @@ var metaaronne = '0x0003BA05';
 var bianco = '0x0018C0A4';
 
 var pets = [liam, ben, wwyrmgiada, dbeattle];
-pets = [nightmare, ben];
+pets = [dbeattle, ben];
 function main(){
     while(true){
     	//Orion.Say("/ Party Target " + Orion.GetSerial(lastattack));

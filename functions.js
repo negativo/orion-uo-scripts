@@ -1,23 +1,71 @@
-
+var previousLastTarget;
+function getGumps(){
+ Orion.Print(Orion.GumpCount());
+ Orion.Print( Orion.GumpCount());
+}
+function getRunes(){
+	var g = Orion.GetLastGump();
+	g.ButtonList().forEach(function(c){
+		var b = c.split(' ');
+		//Orion.Print(b.split(' '));
+		//Orion.Print(Orion.Print(b[0], b[1], b[6]));
+		Orion.Print(Orion.Print(c));
+		Orion.Print(Orion.Print(b[8]));
+		Orion.MouseClick(b[0], b[1], b[8]);
+		Orion.Wait(100);
+	});
+}
 function main() {
 	Orion.OptionFastRotation(true);
 	Orion.Resend();
+	Orion.Print(Player.Name());
+	Orion.Print(Player.Notoriety());
+	var bs = Player.Notoriety() == 6 ? "green|red" : "gree|blue";
+	Orion.IgnoreReset();
+	var i =0;
+	var greytargets = Orion.FindType("-1", "-1", ground, "near|live|ignoreself|ignorefriends",18, "gray|criminal|orange|red");
+	while(greytargets.length){
+		Orion.ShowStatusbar(greytargets, 100, 200 + i *35);
+		Orion.Ignore(greytargets);
+		Orion.Wait(50);
+		greytargets = Orion.FindType("-1", "-1", ground, "near|live|ignoreself|ignorefriends",18, "gray|criminal|orange|red");
+		i++;
+	}
+	
+	var i =0;
+	var blues = Orion.FindType("-1", "-1", ground, "near|live",18,bs);
+	Orion.Print(blues);
+	while(blues.length){
+		Orion.ShowStatusbar(blues, 1400, 200 + i *55);
+		Orion.Ignore(blues);
+		Orion.Wait(50);
+		blues = Orion.FindType("-1", "-1", ground, "near|live",18, bs);
+		i++;
+	}
+	Orion.IgnoreReset();
 }
+
+function thegump(){
+	var gum = Orion.GetLastGump();
+	Orion.Print(gum);
+}
+
 var shouldFollowChars = {
-	'Axias': true,
+	'Axias': false,
 	'Fervus': true,
 	'Demerzel': false,
 	'Aotkpta': true
 };
 
 var useCure = true;
+var shouldDeposit = true;
 var shouldFollow = shouldFollowChars[Player.Name()] || false;
 var lastheal = 0;
 var lastbandage = 0;
 var mobileID;
 var bettles = {
 	'MilkLizard': '0x002D7F15',
-	'Axias': false,
+	'Axias': '0x001EEB37',
 	'Aulin': false,
 	'Josh Scogin': '0x000CBAA9',
 	'Lord Josh Scogin': '0x000CBAA9'
@@ -33,12 +81,45 @@ var isTwoHandedChar = {
 	'Josh Scogin': false
 };
 
-
 var isTwoHanded = isTwoHandedChar[Player.Name()];
 function equipWeapon(){
+  Orion.Print(Player.Name());
   Orion.Dress(Player.Name());
 }
+function getWandsCharges(){
+     var wands = Orion.FindType(any);
+     wands.every(function (w){
+    var wa = Orion.FindObject(w);
+      if(wa.Name() == 'Wand'){
+       	 //getWandCharges(w,target);
+       	 var props =wa.Properties();
+		Orion.Print(props.slice(57));
+		//Orion.Print(getItemCharges(wa));
+      }
+      return true;
+   });
+}
+function dismountAllKill(){
+	Orion.UseObject(self);
+	Orion.Say('all kill');
 
+		Orion.Wait(100);
+	
+	Orion.TargetObject(lasttarget);
+}
+function getItemCharges(object){
+
+     	properties = object.Properties();
+     	
+     	var charges =properties.match(/\Charges:(.*)$/g);
+        var ccc =properties.match(/\Charges:(.*)$/g);
+        
+	    var index = properties.indexOf('Charges');
+	   	var cc = properties.slice(index + 9, index+9 +4);
+
+		return cc;
+    
+}
 function castHealOnMe(){
 	if(Player.Hits() == Player.MaxHits()){
 		return false;
@@ -112,11 +193,10 @@ function superWand(){
        }else{
           Orion.TargetTile('any', Player.X()+2, Player.Y()+2, -1);
        }	
-       
-        Orion.Disarm();
+       Orion.Disarm();
 }
-function teleportenemy()
-{
+
+function teleportenemy(){
     var ee = Orion.FindObject(lasttarget);
     Orion.Print(ee.X()+1);
     Orion.Cast('Teleport');
@@ -128,9 +208,9 @@ function teleportenemy()
     Orion.Print(yy);
     Orion.Print(zz);
     Orion.TargetTile('any',xx,yy,zz);
- }
-function teleportaway()
-{
+}
+
+function teleportaway(){
     var value = 12;
     var empty = 0;
  
@@ -167,53 +247,6 @@ function teleportaway()
     var l = 0;
     var xx = xy[0];
     var yy = xy[1];
-    var otherTiles = otherTilesRect[Player.Direction() & 7];
-    var allTiles = Orion.GetTilesInRect('any',thex - otherTiles[0][0], they - otherTiles[0][1], Player.Z(),thex + otherTiles[1][0], they +otherTiles[1][1], Player.Z());
-    var allTilesRevesed = allTiles.reverse();
-    Orion.Print(allTilesRevesed.length);
-    allTilesRevesed.every(function (t){
-    	Orion.Print('is it land? ' + t.Land());
-    });
-    return false;
-    var isLand = false;
-    Orion.Print(thetile);
-    if(thetile.length > 0){
-    	isLand = thetile[0].IsLandTile();
-    	Orion.Print(isLand);
-    }
-    Orion.Print(Orion.ValidateTargetTile('land',thex, they, thez));
-    //var isLand = Orion.ValidateTargetTile('land',thex, they, thez);
-   return false;
-    Orion.Print(isLand);
-   // return false;
-    if(!isLand){
-		Orion.Print('Not land trying other tiles');
-    	otherTiles[Player.Direction() & 7].every(function (tt){
-    			Orion.Print('Trying '+ tt[0] +', '+ tt[1]);
-    			xx = xy[0] + tt[0];
-	    		yy =xy[1] + tt[1];
-	    		thex = Player.X() +xx;
-	    		they =Player.Y() + yy;
-	    		thetile = Orion.GetTiles('any', thex, they, Player.Z() );
-   				var land = thetile.length > 0 ? thetile[0].Land() : false;
-		    	Orion.Print(land);
-	    		if(land){
-		    		Orion.Print('Land found');
-	    			if(thetile[0].Land()){
-	    				isLand = true;
-	    				Orion.Print(Orion.GetDistance(thex, they));
-	    				Orion.Print('Land found');
-  					Orion.TargetTileRelative('any',xx, yy, thez);
-			    		return false;
-	    			}else{
-	    				Orion.Print('Land not found');
-	    				return true;
-			    	}
-	    		}else{
-	    			return true;
-	    		}
-    	});
-    }
   	Orion.TargetTileRelative('any',xx, yy, thez);
  }
  
@@ -299,7 +332,10 @@ function targetNextToEnemy(){
     }
 }
 function equipSecondaryWeapon(){
-  Orion.Dress('secondary');
+  Orion.Dress(Player.Name()+'_secondary');
+}
+function equipArmor(){
+  Orion.Dress('Axias_armor');
 }
 function reloadRunebooks(){
 	var books = Orion.FindType('0x22C5');
@@ -320,17 +356,8 @@ function doesBookNeedRecharge(from) {
 	return charges[0] !== charges[1];
 }
 function getIsTwoHanded(){
-    var chars = {
-    'Fervus': false,
-    'Axias': true,
-    'Aotkpta': true,
-    'Demerzel': true,
-    'Daneel Olivaw': false,
-    'Aulin': false,
-    'Josh Scogin': false
-};
 
-   return chars[Player.Name()];
+  return isTwoHanded();
 }
 
 function macroVivify(){
@@ -346,17 +373,52 @@ function macroVivify(){
 		    if(waterObj){
 		     
 		     if(waterObj.Color() !== '0x0000'){
-		     	wait = 60000;
+		     	wait = 43000;
+  				
 		     }	     
 			Orion.RequestContextMenu(water);
 			Orion.WaitContextMenuID(water, 5);
 			}
   			Orion.UseSkill('Meditation');
+		Orion.Wait(200);
 		}
-		Orion.Wait(wait);
+		Orion.Wait(wait); 
+		
+		var scrolls = Orion.FindType('0x1F6C', '0xFFFF', backpack);
+		if (!scrolls.length){
+			GetElementalScrolls();Orion.Wait('500');
+		}
 	}
 }
-
+function GetElementalScrolls()
+{
+	while(Player.Mana() < 11){
+		Orion.UseSkill('Meditation');
+		Orion.Wait(2000);
+	}
+	Orion.Cast('32');
+	if (Orion.WaitForTarget(3000))
+		Orion.TargetObject('0x4064582A');
+	Orion.Wait('700');
+	Orion.Say('bank bank');
+	Orion.Wait('700');
+	var findItems0 = Orion.FindType('0x1F6C', '0xFFFF', Player.BankSerial(), 'item|fast|recurse');
+	if (findItems0.length)
+	{
+		Orion.DragItem(findItems0[0], 300);
+		Orion.Wait('300');
+	}
+	Orion.DropDraggedItem('0x443DC4CB', 117, 65);
+	Orion.Wait('500');
+	
+	while(Player.Mana() < 11){
+		Orion.UseSkill('Meditation');
+		Orion.Wait(2000);
+	}
+	Orion.Cast('32');
+	if (Orion.WaitForTarget(3000))
+		Orion.TargetObject('0x412335A6');
+}
 
 function mindExplo(){
 	    var pozz =Orion.FindType('0x0F0D', '-1', 'self', true);
@@ -400,10 +462,13 @@ function spar(){
 
 
 while(true){
-	var weapon = Orion.FindType('0x13E3', '0xFFFF');
-  Orion.Equip(weapon[0]);
-   Orion.Attack('0x00040F73');
-	Orion.Wait(3000);
+	Orion.UseObject('0x402640DE');
+	if (Orion.WaitForTarget(1000)){
+		Orion.TargetObject('self');
+	}
+	Orion.TargetObject('self');
+	Orion.TargetObject('self');
+	Orion.Wait(10500);
 }
 
 }
@@ -416,7 +481,7 @@ function moveReagents(){
     }
     var reagToContainer = Orion.FindObject('reagToContainer');
 var reagents = ['bm', 'bp', 'ga', 'gs', 'mr', 'ns', 'sa', 'ss'];
- var howMany = 80;
+ var howMany = 20;
 for (var i = 0; i < reagents.length; i++){
 
     var list = Orion.FindType(reagents[i], '-1', '0x41592675');
@@ -432,12 +497,12 @@ for (var i = 0; i < reagents.length; i++){
 }
 function getPotionsFromKegs(){
 	
-	var CHEST_WITH_KEGS =  '0x425DD925';
+	var CHEST_WITH_KEGS =  '0x43F8E11C';
 	var heal = 9;
-	var refresh = 7;
-	var cure = 10;
-	var str = 8;
-	var agy =9;
+	var refresh = 13;
+	var cure = 12;
+	var str = 11;
+	var agy =12;
 	var explo = 0;
 	
 	while(heal > 0 || refresh > 0 || cure > 0 || str > 0 || agy > 0 || explo > 0){
@@ -524,25 +589,97 @@ function recallEscape(){
     }
 
 }
-function explo(){
+function exploNoWait(){
+    	var explosionPotions =Orion.FindType('0x0F0D', '-1', 'self', true);
+		var explosionPotion = explosionPotions[0];
+        Orion.UseObject(explosionPotion);
+      
+        while(!Orion.WaitJournal('2', Orion.Now(), Orion.Now() +2500, 'sys|my')){
+        	Orion.Wait(5);
+       }
 
-    	var pozz =Orion.FindType('0x0F0D', '-1', 'self', true);
-		var pozza = pozz[0];
-        Orion.UseObject(pozza);
+       Orion.Wait(635);
+       if(Orion.InLOS(lasttarget)){
+       		Orion.TargetObject(lasttarget);
+       }else{
+       		Orion.TargetTile('any', Player.X()+2, Player.Y()+2, -1);
+       }       
+}
+function explo(){
+    	var explosionPotions =Orion.FindType('0x0F0D', '-1', 'self', true);
+		var explosionPotion = explosionPotions[0];
+        Orion.UseObject(explosionPotion);
+        while(!Orion.HaveTarget()){
+        	Orion.Wait(10);
+        }
+        Orion.CancelTarget(); 
+        while(!Orion.WaitJournal('3', Orion.Now(), Orion.Now() +2500, 'sys|my')){
+        	Orion.Wait(5);
+       }
+       Orion.Wait(900);
+       Orion.UseObject(explosionPotion);
+       Orion.Wait(850);
+       if(Orion.InLOS(lasttarget)){
+       		Orion.TargetObject(lasttarget);
+       }else{
+       		Orion.TargetTile('any', Player.X()+2, Player.Y()+2, -1);
+       }       
+}
+function explows(){
+    	var explosionPotions =Orion.FindType('0x0F0D', '-1', 'self', true);
+		var explosionPotion = explosionPotions[0];
+        Orion.UseObject(explosionPotion);
+        while(!Orion.WaitJournal('3', Orion.Now(), Orion.Now() +1100, 'sys|my')){
+       }
+       Orion.Wait(500);
+          var wands = Orion.FindType(any);
+     wands.every(function (w){
+    var wa = Orion.FindObject(w);
+      if(wa.Name() == 'Wand' && wa.Properties().indexOf('Lightning') !== -1){
+        equipAndUseWand(w);
+
+        return false;
+      }
+      return true;
+   });
         while(!Orion.WaitJournal('2', Orion.Now(), Orion.Now() +2500, 'sys|my')){
        }
-       Orion.Wait(650);
+       Orion.Wait(350);
+       if(Orion.InLOS(lasttarget)){
+       		Orion.TargetObject(lasttarget);
+       }else{
+       		Orion.TargetTile('any', Player.X()+2, Player.Y()+2, -1);
+       }       
+       
+        while(!Orion.HaveTarget()){
+        	Orion.Wait(30);
+        }
+        Orion.TargetObject(lasttarget);
+}
+function explox(){
+    	var explosionPotions =Orion.FindType('0x0F0D', '-1', 'self', true);
+		var explosionPotion = explosionPotions[0];
+        Orion.UseObject(explosionPotion);
+        Orion.Wait(250);    
+        Orion.CancelTarget(); 
+        while(!Orion.WaitJournal('2', Orion.Now(), Orion.Now() +2500, 'sys|my')){
+       }
+       Orion.Cast('Energy Bolt');
+       Orion.UseObject(explosionPotion);
+       Orion.Wait(600);
        if(Orion.InLOS(lasttarget)){
        		Orion.TargetObject(lasttarget);
        }else{
        		Orion.TargetTile('any', Player.X()+2, Player.Y()+2, -1);
        }
-}
-function explox(){
-        if(Orion.HaveTarget()){
-	        Orion.TargetObject(lasttarget);
+       
+        while(!Orion.HaveTarget()){
+        	Orion.Wait(30);
         }
-		Orion.Cast('Explosion');
+        Orion.TargetObject(lasttarget);
+}
+function exploxx(){
+    	Orion.Cast('Explosion');
     	var pozz =Orion.FindType('0x0F0D', '-1', 'self', true);
 		var pozza = pozz[0];
         Orion.UseObject(pozza);
@@ -556,23 +693,21 @@ function explox(){
         while(!Orion.WaitJournal('2', Orion.Now(), Orion.Now() +2500, 'sys|my')){
        }
         Orion.UseObject(pozza);
-       Orion.Wait(650);
+       Orion.Wait(500);
        if(Orion.InLOS(lasttarget)){
        		Orion.TargetObject(lasttarget);
        }else{
        		Orion.TargetTile('any', Player.X()+2, Player.Y()+2, -1);
        }
 }
-function eboltx(){
-        if(Orion.HaveTarget()){
-	        Orion.TargetObject(lasttarget);
-        	Orion.Wait(150);
-        }
-		Orion.Cast('Energy Bolt');
+
+function exploxxx(){
+    	Orion.Cast('Explosion');
     	var pozz =Orion.FindType('0x0F0D', '-1', 'self', true);
 		var pozza = pozz[0];
+    	Orion.Wait(700);
         Orion.UseObject(pozza);
-        Orion.Wait(250);
+       Orion.Wait(250);
         Orion.CancelTarget();
         Orion.CancelTarget();
         while(!Orion.HaveTarget()){
@@ -581,38 +716,19 @@ function eboltx(){
         Orion.TargetObject(lasttarget);
         while(!Orion.WaitJournal('2', Orion.Now(), Orion.Now() +2500, 'sys|my')){
        }
+       
+    	Orion.Cast('Energy Bolt');
         Orion.UseObject(pozza);
-       Orion.Wait(650);
+       Orion.Wait(600);
        if(Orion.InLOS(lasttarget)){
        		Orion.TargetObject(lasttarget);
        }else{
        		Orion.TargetTile('any', Player.X()+2, Player.Y()+2, -1);
        }
-}
-function eboltx2(){
-        if(Orion.HaveTarget()){
-	        Orion.TargetObject(lasttarget);
-        }
-		Orion.Cast('Energy Bolt');
-    	var pozz =Orion.FindType('0x0F0D', '-1', 'self', true);
-		var pozza = pozz[0];
-        Orion.UseObject(pozza);
-        Orion.Wait(250);
-        Orion.CancelTarget();
-        Orion.CancelTarget();
         while(!Orion.HaveTarget()){
         	Orion.Wait(30);
         }
-        Orion.TargetObject(lasttarget);
-        while(!Orion.WaitJournal('2', Orion.Now(), Orion.Now() +2500, 'sys|my')){
-       }
-        Orion.UseObject(pozza);
-       Orion.Wait(650);
-       if(Orion.InLOS(lasttarget)){
        		Orion.TargetObject(lasttarget);
-       }else{
-       		Orion.TargetTile('any', Player.X()+2, Player.Y()+2, -1);
-       }
 }
 function healWand(){
     //findWand('Greater Heal');
@@ -626,11 +742,12 @@ function manaDrain(){
      findAndUseWand('Mana Drain', lasttarget);
 }
 function weakenWand(){
-     findAndUseWand('Weakness', lasttarget);
+     findAndUseWand('Weaken', lasttarget);
+}
+function arrowWand(){
+     findAndUseWand('Magic Arrow', lasttarget);
 }
 function findAndUseWand(name, target){
-  Orion.Unequip('rightHand');
-  Orion.Wait(400);
      var wands = Orion.FindType(any);
      wands.every(function (w){
     var wa = Orion.FindObject(w);
@@ -643,8 +760,7 @@ function findAndUseWand(name, target){
    });
 }
 function findAndEquipWand(name, target){
-  Orion.Unequip('rightHand');
-  Orion.Wait(400);
+
    var wands = Orion.FindWand(name);
    equipWand(wands);
    
@@ -701,17 +817,23 @@ function punch(){
 			
 		Orion.Wait(50);
 	}
+	Orion.CharPrint(lastattack,65,'Stunned');
+	Orion.CharPrint(lastattack,65,'Stunned');
+	Orion.CharPrint(lastattack,65,'Stunned');
+	Orion.CharPrint(lastattack,65,'Stunned');
+	Orion.Wait(650);
+    Orion.UseWrestlingStun();
+    drinkRefresh();
+	return true;
        		Orion.TargetObject(lastattack);
        		Orion.TargetObject(lastattack);
-	Orion.Say("/ Party Combo " + Orion.GetSerial(lastattack));
+	//Orion.Say("/ Party Combo " + Orion.GetSerial(lastattack));
     	var pozz =Orion.FindType('0x0F0D', '-1', 'self', true);
 		var pozza = pozz[0];
         Orion.UseObject(pozza);
         Orion.WaitForTarget(450);
        		Orion.TargetObject(lastattack);
 
-	Orion.Say('You Are Stunned! :D');
-	Orion.CharPrint(lastattack,65,'Stunned');
 	Orion.ClearJournal();
 }
 
@@ -721,6 +843,19 @@ function getStats(){
 			Orion.Cast('Night Sight', lasttile);
 		}
 	}
+}
+function Follower(){
+    Orion.AddObject('FollowMe');
+    Orion.Print("Who do you want to follow?");
+    while (Orion.HaveTarget()){
+        Orion.Wait(100);
+    }
+
+    var target = Orion.FindObject('FollowMe');
+    while (target.Exists())    {
+        Orion.WalkTo(target.X(), target.Y(), target.Z(), 3); //change "3" to distance you want stick to target
+        Orion.Wait(100);
+    }
 }
 function MoveItemByType()
 {
@@ -750,7 +885,7 @@ function MoveItemByType()
         var items = Orion.FindTypeEx(itemType, itemColor, fromContainer.Serial());
         //var items = Orion.FindType('any', 'any', fromContainer.Serial());
         if(items.length){
-            Orion.MoveItem(items[0].Serial(), 1, toContainer.Serial());
+            Orion.MoveItem(items[0].Serial(), 0, toContainer.Serial());
             //Orion.MoveItem(items[0], 1, toContainer.Serial());
             Orion.Wait(delay);    
         }
@@ -776,18 +911,23 @@ function identify(){
     while(Orion.HaveTarget()){
         Orion.Wait('50');
     }
-    var wa = Orion.FindObject('wa');
+   // var wa = Orion.FindObject('wa');
     var gold = Orion.FindType(any, -1 ,fromContainer.Serial());
     
     Orion.Print(gold);
     gold.map(function(g){
     	var toid = Orion.FindObject(g);
-    	if(Orion.Contains(toid.Properties(), 'Unidentified')){
-    		Orion.Print(toid.Properties());
-	    	Orion.UseObject(wa.Serial());
+        Orion.UseSkill('Item Identification', g);
 	    	Orion.WaitForTarget(1000);
-	    	Orion.TargetObject(g);
-    		Orion.Wait(1300);
+    	if(Orion.Contains(toid.Properties(), 'Unidentified')){
+    		
+        //Orion.UseSkill('Item Identification', wa.Serial());
+	    	//rion.UseObject(wa.Serial());
+	    	Orion.WaitForTarget(1000);
+	  //  	Orion.TargetObject(g);
+    //		Orion.Wait(1300); 
+  //  		toid = Orion.FindObject(g);
+//    		Orion.Print(toid.Properties());
     	}
     	
         //Orion.UseSkill('Item Identification', g);
@@ -796,7 +936,52 @@ function identify(){
  
 
 }
-
+function VetPet(){
+	const useVet = true;
+        const mobilesNearby = Orion.FindTypeEx(
+        '-1',
+        '-1',
+        'ground',
+        'mobile',
+        8,
+        'green|blue|innocent|gray|gray|criminal'
+        )
+    
+      // filter only friends in the list
+        const friendsNearby = mobilesNearby.filter(function (mobile) {
+            return isFriend(mobile)
+        }).concat([Player]);
+        
+        
+    
+      // get the lowest hp friend
+          friendsNearby.sort(function (e1, e2) {
+            return e1.Hits() - e2.Hits()
+          });
+        if (friendsNearby.length) {
+               const lowestHpFriend = friendsNearby[0];
+               if(!lowestHpFriend.IsHuman() && lowestHpFriend.Distance()<2){
+               		healTarget(lowestHpFriend);
+               }else{
+	               if(useVet && !lowestHpFriend.IsHuman() && Orion.GetDistance(lowestHpFriend.Serial()) < 2){
+	               		healTarget(lowestHpFriend);
+	               }else{
+		               if(lowestHpFriend.Poisoned()){
+		               	
+		               		Orion.Cast('Cure', lowestHpFriend.Serial());
+		    				Orion.Print('Healing ' + lowestHpFriend.Name());
+		               }
+		               if(lowestHpFriend.Hits()<lowestHpFriend.MaxHits()){
+		               
+		    				Orion.Print('Healing ' + lowestHpFriend.Name());
+		               		Orion.Cast('Greater Heal', lowestHpFriend.Serial());
+		               	}
+	               	}
+               	}
+               // healTarget(lowestHpFriend);
+        }
+     
+}
 function VetAllFriendlyPets(){
 	const useVet = true;
     while(true){
@@ -823,22 +1008,27 @@ function VetAllFriendlyPets(){
           });
         if (friendsNearby.length) {
                const lowestHpFriend = friendsNearby[0];
-               if(useVet && !lowestHpFriend.IsHuman() && Orion.GetDistance(lowestHpFriend.Serial()) < 2){
+               if(!lowestHpFriend.IsHuman() && lowestHpFriend.Distance()<2){
                		healTarget(lowestHpFriend);
                }else{
-	               if(lowestHpFriend.Poisoned()){
-	               	
-	               		Orion.Cast('Cure', lowestHpFriend.Serial());
-	    				Orion.Print('Healing ' + lowestHpFriend.Name());
-	               }
-	               if(lowestHpFriend.Hits()<lowestHpFriend.MaxHits()){
-	               
-	    				Orion.Print('Healing ' + lowestHpFriend.Name());
-	               		Orion.Cast('Greater Heal', lowestHpFriend.Serial());
+	               if(useVet && !lowestHpFriend.IsHuman() && Orion.GetDistance(lowestHpFriend.Serial()) < 2){
+	               		healTarget(lowestHpFriend);
+	               }else{
+		               if(lowestHpFriend.Poisoned()){
+		               	
+		               		Orion.Cast('Cure', lowestHpFriend.Serial());
+		    				Orion.Print('Healing ' + lowestHpFriend.Name());
+		               }
+		               if(lowestHpFriend.Hits()<lowestHpFriend.MaxHits()){
+		               
+		    				Orion.Print('Healing ' + lowestHpFriend.Name());
+		               		Orion.Cast('Greater Heal', lowestHpFriend.Serial());
+		               	}
 	               	}
                	}
                // healTarget(lowestHpFriend);
         }
+        Orion.Wait(2000);
     }
 }
 
@@ -860,7 +1050,7 @@ function healTarget(lowestHpFriend)
 
 function isFriend(mobileObj) {
     const friendsList = Orion.GetFriendList()
-    if (friendsList.indexOf(mobileObj.Serial()) >= 0) {
+    if (friendsList.indexOf(mobileObj.Serial()) >= 0 && !mobileObj.Dead()) {
         return true
     }
     return false
@@ -871,17 +1061,40 @@ function armMe(){
 	if(isTwoHanded){
 		Orion.Dress(Player.Name());
 		if(Orion.InJournal('You must wait')){
-			Orion.Wait(1200);
+			Orion.Wait(600);
 			Orion.Dress(Player.Name());
 		}
 	}
 }
 function disarmMe(){
-    if(isTwoHanded){
+    if(isTwoHandedWeapon()){
         Orion.Disarm();
     }
 }
 
+
+function isTwoHandedWeapon(){
+
+	var left = Orion.ObjAtLayer('LeftHand');
+	var right = Orion.ObjAtLayer('rightHand');
+	var weapon = right ? right : left;
+	if(!weapon){
+		return false;
+	}
+	var properties = weapon.Properties();
+    var matches = properties.match("Two-handed");
+
+    return matches && !properties.match("bow") ? true : false;
+}
+
+function drinkHeal(){
+  if(!Player.Poisoned()){
+       disarmMe();
+       Orion.UseType('0x0F0C', '0xFFFF');//heal pot
+       armMe();
+       Orion.Wait(500);
+    }
+}
 function drinkCure(){
   if(Player.Poisoned() && useCure ){
        disarmMe();
@@ -910,7 +1123,7 @@ function healMe(){
 		}
 	}
     
-	if(Player.Hits() < Player.MaxHits() && lastbandage < Date.now() - 8000){
+	if(Player.Hits() < Player.MaxHits() && lastbandage < Date.now() - 10000){
 		if(Player.Name() == 'MilkLizard'){
 			Orion.CancelTarget();
 			Orion.CancelTarget();
@@ -934,17 +1147,26 @@ function healMe(){
 			bandagetimer();
 		}
 	}   
-	drinkRefresh();
-}
-
-function drinkRefresh(){
 	if(Player.Stam() < Player.MaxStam() / 3 ){
-		disarmMe();
-		Orion.UseType('0x0F0B', '0xFFFF');
-		armMe();
+		drinkRefresh();
 	}
 }
 
+function drinkRefresh(){
+	
+		disarmMe();
+		Orion.UseType('0x0F0B', '0xFFFF');
+		armMe();
+
+}
+function AutoHealFriends(){
+	
+	while(true){
+		HealFriends();
+		Orion.Wait(3000);
+	}
+	
+}
 function HealFriends() {
   Orion.ClearHighlightCharacters([(priorityHighlightList = false)])
   Orion.Ignore('self')
@@ -970,7 +1192,7 @@ function HealFriends() {
 
   if (friendsNearby.length) {
     const lowestHpFriend = friendsNearby[0]
-    if (!checkFriendStatus(lowestHpFriend)) {
+    if (!checkFriendStatus(lowestHpFriend) ) {
       Orion.CharPrint(Player.Serial(), 65, '* no friends in need! *')
     }
   } else {
@@ -980,9 +1202,13 @@ function HealFriends() {
   return null;
 }
 
+function useMoongate(){
+	Orion.UseFromGround("0x0F6C");
+}
+
 function isFriend(mobileObj) {
   const friendsList = Orion.GetFriendList()
-  if (friendsList.indexOf(mobileObj.Serial()) >= 0) {
+  if (friendsList.indexOf(mobileObj.Serial()) >= 0 && !mobileObj.Dead()) {
     Orion.CharPrint(mobileObj.Serial(), 65, '** Friend **')
     return true
   }
@@ -992,7 +1218,15 @@ function checkFriendStatus(friend) {
   if (friend) {
     const friendSerial = friend.Serial()
     const friendName = friend.Name()
-    if (friend.Poisoned()) {
+    if (friend.Frozen() && !friend.IsHuman()) {
+      Orion.AddHighlightCharacter(friendSerial, 1159, [
+        (priorityHighlightList = false)
+      ])
+      Orion.CharPrint(Player, 65, 'breaking ' + friendName + 'paralize')
+      Orion.PrintFast(friend.Serial(), 65, 1, 'breaking para...')
+      Orion.Cast('Feeblemind', friendSerial)
+      return true
+    } else if (friend.Poisoned()) {
       Orion.AddHighlightCharacter(friendSerial, 1159, [
         (priorityHighlightList = false)
       ])
@@ -1004,18 +1238,27 @@ function checkFriendStatus(friend) {
       Orion.AddHighlightCharacter(friendSerial, 1159, [
         (priorityHighlightList = false)
       ])
-      Orion.CharPrint(Player.Serial(), 65, 'healing ' + friendName)
-      Orion.PrintFast(friend.Serial(), 65, 1, 'greater healing...')
-      Orion.Cast('Greater Heal', friend.Serial())
-      return true
+		if(!friend.IsHuman() && friend.Distance()<2){
+				healTarget(friend); 
+		}
+      Orion.CharPrint(Player.Serial(), 65, 'healing ' + friendName);
+      Orion.PrintFast(friend.Serial(), 65, 1, 'greater healing...');
+      Orion.Cast('Greater Heal', friend.Serial());
+      return true;
     } else if (friend.Hits() < friend.MaxHits()) {
       Orion.AddHighlightCharacter(friendSerial, 1159, [
         (priorityHighlightList = false)
       ])
-      Orion.CharPrint(Player.Serial(), 65, 'healing ' + friendName)
-      Orion.PrintFast(friendSerial, 65, 1, 'healing...')
-      Orion.Cast('Heal', friendSerial)
-      return true
+      Orion.CharPrint(Player.Serial(), 65, 'healing ' + friendName);
+      Orion.PrintFast(friendSerial, 65, 1, 'healing...');
+       if(!friend.IsHuman() && friend.Distance()<2){
+         		healTarget(friend); return true;
+		}
+       if(!friend.IsHuman()){
+         		 Orion.Cast('Greater Heal', friendSerial); return true;
+		}
+      Orion.Cast('Heal', friendSerial);
+      return true;
     }
   }
   return false
@@ -1040,11 +1283,11 @@ var notorietyColors = {
   6: 33
 }
 function TargetNext(){ 
-	if(Player.Name() == 'Demerzel'){
-		mobileID = Orion.FindType("-1", "-1", ground, "near|live|ignoreself|ignorefriends",18, "gray|criminal|orange|red|blue");
+	if(Player.Name() == 'Demerzel' || Player.Name() == 'Daneel Olivaw'  || Player.Name() == 'Josh Scogin'  ){
+		mobileID = Orion.FindType("0x0190|0x0191", "-1", ground, "near|live|ignoreself|ignorefriends",12, "gray|criminal|orange|red|blue");
 	}else{
 	
-		mobileID = Orion.FindType("-1", "-1", ground, "near|live|ignoreself|ignorefriends",18, "gray|criminal|orange|red");
+		mobileID = Orion.FindType("-1", "-1", ground, "near|live|ignoreself|ignorefriends",12, "gray|criminal|orange|red");
 		//mobileID = Orion.FindType("0x0190|0x0191", "-1", ground, "near|live|ignoreself|ignorefriends",18, "gray|criminal|orange|red");
 	}
 		var enemytarget = Orion.FindObject(mobileID);
@@ -1054,10 +1297,18 @@ function TargetNext(){
 		
 		Orion.ClearHighlightCharacters();
 		Orion.RemoveHighlightCharacter(previousEnemy);
-		Orion.Print( enemytarget.Notoriety());
+		//Orion.Print( enemytarget.Notoriety());
 		Orion.CharPrint(mobileID,enemyColor , '*** Target Found ***');
-		//Orion.TargetObject(mobileID);
-		Orion.ClientLastTarget(mobileID);
+		   	if(Player.Name() !== 'Aulin'){
+          		 Orion.TargetObject(mobileID);
+         
+           }else{
+           	 if(!Player.Hidden()){
+           	  Orion.Say('All Guard Me');
+           	  }
+           }  
+           
+           Orion.ClientLastTarget(mobileID);
 		
 		if(shouldFollow){ Orion.Follow(mobileID); }
 		Orion.ShowStatusbar(mobileID, 100, 200);
@@ -1075,20 +1326,31 @@ function TargetNext(){
 }
  function AutoAttackChamp(){
 	while(!Player.Dead()){
-		if(bettles[Player.Name()]){
-			deposit();
-		}
+		//if(bettles[Player.Name()]){
+		//	deposit();
+		//}
 		armMe();
-		if(!mobileID || !Orion.ObjectExists(mobileID)){
+	//	if(Player.Name()=='Aulin'){
+	//		TargetNext();
+	//		AttackNext(mobileID);
+	// 		Orion.Wait(800);
+	//	}else{
+		var mobobj = Orion.FindObject(mobileID);
+		if(!mobileID || !Orion.ObjectExists(mobileID) || !mobobj.InLOS() || mobobj.Dead() ){
             if(shouldFollow){ Orion.Follow(mobileID); }
 			TargetNext();
+			if(mobobj) Orion.Print(mobobj.Notoriety());
+	//		AttackNext(mobileID);
 		}else{
 			Orion.Resend();
-            if(shouldFollow){ Orion.Follow(mobileID); }
+          	 if(shouldFollow){ Orion.Follow(mobileID); }
 			AttackNext(mobileID);
+			Orion.Print(mobobj.Distance());
+			Orion.Print(mobobj.Exists());
 		}
         if(shouldFollow){ Orion.Follow(mobileID); }
-        Orion.Wait(800);
+        Orion.Wait(200);
+   //     }
 	}
 }
 function AutoHealPVM(){
@@ -1124,7 +1386,7 @@ function healPotion(){
   	}
 }
 function bandagetimer() {
-	if(Orion.GetGlobal('lastbandage') < Date.now() - Orion.GetGlobal('lasttimebandage')){
+	if(!Orion.GetGlobal('lastbandage') || !Orion.GetGlobal('lasttimebandage')  || Orion.GetGlobal('lastbandage') < Date.now() - Orion.GetGlobal('lasttimebandage')){
 		if (Player.Hits() < Player.MaxHits()) {
 			if (Player.Dex() < 100) {
 				timetobandage = ((14.5 - (Player.Dex() / 20)) * 1000)+250;
@@ -1136,7 +1398,8 @@ function bandagetimer() {
 			}
 			Orion.Wait(200);
 			Orion.BandageSelf();
-			if(Orion.InJournal('You begin')){
+			
+			if(Orion.WaitJournal('You begin', Orion.Now(), Orion.Now() +500, 'sys|my')){
 				Orion.SetTimer('bende', timetobandage);
 				Orion.CharPrint(Player.Serial(), 65, 'Bandage Started');
 				Orion.AddDisplayTimer('bende', timetobandage, 'AboveChar', 'Circle|Bar', 'Bandage', -35, 0, '0xFFFF', 0xFFF, '0xFFFFFFFE');  
@@ -1145,7 +1408,6 @@ function bandagetimer() {
 			}
 			drinkCure();
 		}else{
-			
 			Orion.CharPrint(Player.Serial(), 45, 'Already at Full Health');
 		 }
 	}
@@ -1160,9 +1422,9 @@ function testColor(){
 
 function deposit(){
 	var bettle = bettles[Player.Name()];
-	if (Player.Weight() > 340) {
+	if (Player.Weight() > 340 && shouldDeposit) {
 	   	Orion.UseObject('self');
-		Orion.Wait(350);
+		Orion.Wait(550);
 	   	var gold = Orion.FindType('0x0EED', '0xFFFF',backpack); //gold
 		Orion.Wait(350);
 	    Orion.MoveItem(gold, -1, bettle);
@@ -1177,8 +1439,14 @@ function AttackNext(){
 //	var toCast = 'Energy Bolt';
     		if(shouldFollow){ Orion.Follow(mobileID); }
             Orion.CharPrint(mobileID, 33, '*** Target Found ***');
+          	if(Player.Name() !== 'Aulin'){
            Orion.TargetObject(mobileID);
            Orion.ClientLastTarget(mobileID);
+           }else{
+           		if(!Player.Hidden()){
+           	  		Orion.Say('All Guard');
+           	  	}
+           }
             Orion.Attack(mobileID);
 			Orion.Wait(300);
 			if(Player.Name() == 'MilkLizard'){
@@ -1221,22 +1489,23 @@ function AttackNext(){
 }
 
 function AutoProvoke() {
-    var nearest = Orion.FindType('!0x0190|!0x00A4', '0xFFFF', ground, 'near|mobile', '18', 'red|gray|criminal');
+    var nearest = Orion.FindType('!0x0190|!0x00A4', '0xFFFF', ground, 'near|live|ignoreself|ignorefriends', '18', 'red|gray|criminal');
     if (nearest) {
         Orion.CharPrint(nearest, 1153, 'Inciting ');
         var first = nearest;
         Orion.Wait(100);
         Orion.Ignore(nearest, true);
         Orion.Wait(100);
-        nearest = Orion.FindType('!0x0190|!0x00A4', '0xFFFF', ground, 'near|mobile', '25', 'red|gray|criminal');
+        nearest = Orion.FindType('!0x0190|!0x00A4', '0xFFFF', ground, 'near|live|ignoreself|ignorefriends', '25', 'red|gray|criminal');
         var second = nearest;
         Orion.CharPrint(nearest, 1153, 'onto');
         Orion.Ignore(nearest, true);
-        Orion.Wait(300);
+        Orion.Wait(600);
+		Orion.IgnoreReset();
         Orion.UseSkill("Provocation");
-        Orion.WaitForTarget(1000);
+        Orion.WaitForTarget(600);
         Orion.TargetObject(first);
-        Orion.WaitForTarget(1000);
+        Orion.WaitForTarget(600);
         Orion.TargetObject(second);
         //Orion.IgnoreReset();
         if(Orion.InJournal('Your music succeeds')){
@@ -1247,7 +1516,6 @@ function AutoProvoke() {
         }
         
 		Orion.ClearJournal();
-        Orion.Wait(5000);
     } else {
         Orion.Print("No Mobs within range to provoke");
         Orion.IgnoreReset();
@@ -1257,25 +1525,37 @@ function AutoProvoke() {
 
 
 function castExplosion(){
-	castOffensiveSpell('Explosion');
+	castOffensiveSpell('Explosion', 1950);
 }
 
 function castPoison(){
-	castOffensiveSpell('Poison');
+	castOffensiveSpell('Poison', 1170);
 }
 
 function castEnergyBolt(){
-	castOffensiveSpell('Energy Bolt');
+	castOffensiveSpell('Energy Bolt',2050);
 }
 
 function castWeaken(){
-	castOffensiveSpell('Weaken');
-}
-function castMindBlast(){
-	castOffensiveSpell('Mind Blast');
+	castOffensiveSpell('Weaken', 720);
 }
 
-function getAllLeather(){
+function castClumsy(){
+	castOffensiveSpell('Clumsy', 720);
+}
+
+function castFeeblemind(){
+	castOffensiveSpell('Feeblemind',720);
+}
+function castMagicArrow(){
+	castOffensiveSpell('Magic Arrow',720);
+}
+
+function castMindBlast(){
+	castOffensiveSpell('Mind Blast', 1650);
+}
+
+function moveWands(){
 	Orion.AddObject('fromContainer');
     Orion.Print('Select a container to move items from');
     while(Orion.HaveTarget()){
@@ -1294,7 +1574,65 @@ function getAllLeather(){
     Orion.Print(gold);
     gold.map(function(g){
     	var toid = Orion.FindObject(g);
-    	if(Orion.Contains(toid.Properties(), 'Leather')){
+    	if(Orion.Contains(toid.Properties(), 'Mana Drain')){
+			
+			Orion.MoveItem(g, 1, toContainer.Serial());
+    		Orion.Wait(800);
+    	}
+    
+    });
+}
+function repairArmors(){
+	Orion.AddObject('fromContainer');
+    Orion.Print('Select a container to repair items from');
+    while(Orion.HaveTarget()){
+        Orion.Wait('50');
+    }
+    var fromContainer = Orion.FindObject('fromContainer');
+
+    var gold = Orion.FindType(any, -1 ,fromContainer.Serial());
+    var armor_type = 'Plate';
+    gold.map(function(g){
+    	var toid = Orion.FindObject(g);
+    	if(Orion.Contains(toid.Properties(), armor_type)){
+			Orion.UseType('0x13E3', '0xFFFF');
+			Orion.Wait(1000);
+			
+				var gump0 = Orion.GetGump('last');
+				gump0.Select(Orion.CreateGumpHook(42));
+					Orion.Wait(100);
+				
+			
+			if (Orion.WaitForTarget(1000)){
+				Orion.TargetObject(g);
+			}
+			//Orion.TargetObject(toid.Serial());
+            //Orion.MoveItem(g, 1, toContainer.Serial());
+    		Orion.Wait(600);
+    	}
+    
+    });
+}
+function getAllLeather(){
+	Orion.AddObject('fromContainer');
+    Orion.Print('Select a container to move items from');
+    while(Orion.HaveTarget()){
+        Orion.Wait('50');
+    }
+    var fromContainer = Orion.FindObject('fromContainer');
+    
+    Orion.AddObject('toContainer');
+    Orion.Print('Select a container to move items to');
+    while(Orion.HaveTarget()){
+        Orion.Wait('50');
+    }
+    var toContainer = Orion.FindObject('toContainer');
+    var gold = Orion.FindType(any, -1 ,fromContainer.Serial());
+    
+    var armor_type = 'leather';
+    gold.map(function(g){
+    	var toid = Orion.FindObject(g);
+    	if(Orion.Contains(toid.Properties(), armor_type)){
 			Orion.UseObject('0x40B6AD69');
 			Orion.Wait(1000);
 			
@@ -1313,27 +1651,18 @@ function getAllLeather(){
     
     });
 }
-function castOffensiveSpell(spell){
+function castOffensiveSpell(spell, timer){
+	Orion.TargetObject(lasttarget);
 	Orion.Cast(spell);
-	return false;
-	while(!Orion.HaveTarget()){
-		Orion.Wait(50);
+	if(timer){
+		Orion.Wait(timer);
+		Orion.TargetObject(lasttarget);
 	}
-	var theEnemy = Orion.FindObject(lasttarget);
-	if(theEnemy){
-		if(theEnemy.InLOS() && theEnemy.Distance() < 13){
-			Orion.TargetObject(lasttarget);
-		}
-	}
-	Orion.CancelWaitTarget();
-	Orion.CancelWaitTarget();
 }
 
 function runForrest(){
-	
- 	while(!Player.Dead()){
-    	Orion.Print('Running...');
-		var value = 5;
+	    	Orion.Print('Running...');
+		var value = 8;
 	    var empty = 0;
  
     	var offset =[
@@ -1348,9 +1677,296 @@ function runForrest(){
 	    ];
 
 	    var xy = offset[Player.Direction() & 7];
+ 	while(!Player.Dead()){
+
 	    var thex = Player.X() + xy[0];
 	    var they = Player.Y() + xy[1];
   		Orion.WalkTo(thex, they);
-  		Orion.Wait(1);
+  		Orion.Wait(5);
   	}
+}
+
+function MatrixPrintTest(){
+    var posX = Player.X();
+    var posY = Player.Y();
+    var posZ = Player.Z();
+    var radius = 12;
+    var index = 1;
+	Orion.ClearFakeMapObjects();
+    for (var i = -radius; i <= radius; i++){
+        for (var j = -radius; j <= radius; j++){
+            Orion.AddFakeMapObject((index), '0x1822', 33, posX + i, posY + j, posZ + 1);
+            //Orion.Wait(5);
+            index++;
+        }
+    }
+}
+
+
+
+function tameIt(creature) {
+    // Tame a creature
+    Orion.UseSkill('Animal Taming');
+    Orion.WaitTargetObject(creature);
+}
+
+function tamingMacro() {
+    var ignore = [];
+    var searchDistance = 3;
+    var isNearTheTarget = false;
+    var ignoreList = [];
+    while (true) {
+        Orion.ClearJournal();
+        var target = Orion.FindType('0x0030', '-1', ground, 'fast|mobile|live', searchDistance, 'gray|criminal|red');
+        if (target.length) {
+
+            var targetobject = Orion.FindObject(target);
+            Orion.UseSkill('Peacemaking', target);
+            Orion.Wait(200);
+            Orion.Print(targetobject.Name());
+
+            if (targetobject.Name() === 'Aulin') {
+                Orion.Print(target);
+              //  while (!targetobject.Dead()) {
+                    Orion.Attack(target);
+                    Orion.Wait(600);
+               // }
+                //   ignoreList.push('!'+target);
+            }
+
+            if (targetobject.Name() !== 'Aulin') {
+
+                Orion.Print(target);
+                Orion.RemoveObject("target");
+                Orion.AddObject("target", target);
+                var targetX = Orion.FindObject("target");
+                
+                isNearTheTarget = false;
+                for (var i = 0; i < target.length; i++) {
+                    var creature = target[i];
+
+                    targetobject = Orion.FindObject(creature);
+
+
+
+                    var tamed = false;
+                   // while (!tamed) {
+
+                        Orion.UseType('0x0F07', '0xFFFF');
+
+
+                        Orion.AddHighlightCharacter(creature, '123');
+                        while (targetobject.WarMode()) {
+                            Orion.UseSkill('Peacemaking');
+                            Orion.WaitTargetObject(creature);
+                            Orion.Wait(500);
+                        }
+                        Orion.Wait(500);
+                        tameIt(creature);
+                        if (!Orion.InJournal('angry to continue')) {
+                            Orion.Wait(13000);
+                        }
+                        if (Orion.InJournal('master|challenging')) {
+                            tamed = true;
+                            Orion.Wait(500);
+                            Orion.RenameMount(creature, 'Aulin');
+                            Orion.Wait(500);
+                            releaseCreature(creature);
+                            while (!targetobject.Dead()) {
+			                    Orion.Attack(creature);
+			                    Orion.Wait(600);
+			                }
+                        }
+
+                        if (Orion.InJournal('fail to tame')) {
+
+                        } else {
+                            Orion.Wait(1500);
+                        }
+
+                    }
+                }
+        } else {
+        	Orion.IgnoreReset();
+            Orion.Print('not found, increasing search distance');
+            // searchDistance += 5;
+            Orion.Wait(500);
+        }
+
+    }
+}
+
+function trainPets(){
+	while(true){
+		Orion.UseSkill('21');
+		Orion.UseObject('0x49F6C467');
+		Orion.Wait(23000);
+		var pet1 = Orion.FindObject('0x000C5C30');
+		var pet2 = Orion.FindObject('0x003B4984');
+		while(pet1.Hits() < pet1.MaxHits() && pet2.Hits() < pet2.MaxHits()){
+			VetPet();
+			pet1 = Orion.FindObject('0x000C5C30');
+			pet2 = Orion.FindObject('0x003B4984');
+			Orion.Wait(1000);
+		}
+	}
+
+}
+
+function releaseCreature(creature) {
+    Orion.RequestContextMenu(creature);
+    Orion.WaitContextMenuID(creature, 8);
+    if (Orion.WaitForGump(2000)) {
+        var gump0 = Orion.GetGump('last');
+        if ((gump0 !== null) && (gump0.ID() === '0x909CC741')) {
+            gump0.Select(Orion.CreateGumpHook(2));
+            Orion.Wait(100);
+        }
+    }
+}
+function findClosestPlayer() {
+    const objects = Orion.FindType(
+        0xFFFF, 0xFFFF, 
+        "ground", 
+        "human, near, live, ignorefriends, ignoreself", 18
+    );
+    if (objects.length > 0) {
+        const players = objects
+            .map(function(x) {
+                return Orion.FindObject(x);
+            })
+            .filter(function(x) {  
+                return !x.IsPlayer() && x.IsHuman();
+            })
+            .sort(function (a, b) {
+                return Orion.GetDistance(a.Serial()) - Orion.GetDistance(b.Serial());
+            });
+        if (players.length > 0) {
+            const player = players[0];
+            Orion.Print("Found player "+ player.Name() + " -> " + Orion.GetDistance(player.Serial()));
+            return player.Serial();        
+        }
+    }
+    return false;
+}
+
+function snoopClosest() {
+    const player = findClosestPlayer();
+    if (player !== false) {
+        if (Orion.GetDistance(player) > 1) {
+            Orion.Print("Come closer")
+        } else {
+            const thebackpack = Orion.ObjAtLayer('21', player);
+            if (thebackpack) {
+                Orion.OpenContainer(thebackpack.Serial());
+            }
+        }
+    }
+}
+
+function getClosestBackpack() {
+    const player = findClosestPlayer();
+    if (player !== false) {
+        if (Orion.GetDistance(player) > 1) {
+            Orion.Print("Come closer")
+        } else {
+            const thebackpack = Orion.ObjAtLayer('21', player);
+            if (thebackpack) {
+                Orion.OpenContainer(thebackpack.Serial());
+                
+			    return thebackpack;
+            }
+        }
+    }
+    return null;
+}
+function stealWeapon(){
+	Orion.UseWrestlingDisarm();
+	Orion.AddObject('weaponToSteal');
+    Orion.Print('Select a weapon to steal');
+    while(Orion.HaveTarget()){
+        Orion.Wait('50');
+    }
+    var weaponToSteal = Orion.FindObject('weaponToSteal');
+    var theBack = getClosestBackpack();
+    Orion.ClearJournal();
+    while(!theBack){
+	    theBack = getClosestBackpack();
+    	Orion.Wait(20);
+    }
+    
+     while(!Orion.InJournal('You successfully disarm')) {
+          Orion.Wait(500);
+      }
+   var weap = Orion.FindObject(weaponToSteal, theBack.Serial());
+    Orion.Print('get weap');
+    Orion.Print(weap);
+    Orion.Print(weaponToSteal);
+    Orion.Wait(20); 
+    Orion.UseSkill('stealing',weaponToSteal.Serial());
+  
+    Orion.Print(weap);
+    
+    
+}
+
+//relic 0x2AA4
+
+
+function stealPSrelic(){
+    var theBack = getClosestBackpack();
+    Orion.ClearJournal();
+    while(!theBack){
+	    theBack = getClosestBackpack();
+    	Orion.Wait(50);
+    }
+    
+    	Orion.Wait(20);
+    var toSteal = Orion.FindType('0x2AA4','any', theBack.Serial());
+    	Orion.Wait(20);
+    	Orion.Print(toSteal);
+    if(toSteal!= ''){
+    	Orion.Wait(20); 
+    	Orion.UseSkill('stealing', toSteal);
+    	Orion.Wait(300);
+    	Orion.UseSkill('hiding');
+    	return;
+    }  
+    toSteal = Orion.FindType('0x14F0', '0xFFFF', theBack.Serial());
+    	Orion.Wait(20);
+    	Orion.Print('ps');
+    	Orion.Print(toSteal);
+    if(toSteal != ''){
+    	Orion.Wait(20); 
+    	Orion.UseSkill('Stealing', toSteal);
+    	Orion.Wait(300);
+    	Orion.UseSkill('hiding');
+    	return;
+    }  
+    
+    var puches = Orion.FindType('0x0E79', '0xFFFF', theBack.Serial());
+    puches.forEach(function(p) {
+	      var toSteal = Orion.FindType('0x2AA4','any', theBack.Serial());
+	    	Orion.Wait(20);
+	    	Orion.Print(toSteal);
+	    if(toSteal!= ''){
+	    	Orion.Wait(20); 
+	    	Orion.UseSkill('stealing', toSteal);
+	    	Orion.Wait(300);
+	    	Orion.UseSkill('hiding');
+	    	return;
+	    }  
+	    toSteal = Orion.FindType('0x14F0', '0xFFFF', theBack.Serial());
+	    	Orion.Wait(20);
+	    	Orion.Print('ps');
+	    	Orion.Print(toSteal);
+	    if(toSteal != ''){
+	    	Orion.Wait(20); 
+	    	Orion.UseSkill('Stealing', toSteal);
+	    	Orion.Wait(300);
+	    	Orion.UseSkill('hiding');
+	    	return;
+	    }  
+    });
+    
 }

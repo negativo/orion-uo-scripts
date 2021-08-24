@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data version="0" size="1">
+    <autoloot name="New list" container="0x45860CAA" find_list="gold arrow scroll head_copy" ignore_list="Not use" check_los="true" check_weight_limit="true" selected="true" autostart_on_login="false"/>
+</data>
