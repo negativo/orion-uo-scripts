@@ -3,18 +3,6 @@ function getGumps(){
  Orion.Print(Orion.GumpCount());
  Orion.Print( Orion.GumpCount());
 }
-function getRunes(){
-	var g = Orion.GetLastGump();
-	g.ButtonList().forEach(function(c){
-		var b = c.split(' ');
-		//Orion.Print(b.split(' '));
-		//Orion.Print(Orion.Print(b[0], b[1], b[6]));
-		Orion.Print(Orion.Print(c));
-		Orion.Print(Orion.Print(b[8]));
-		Orion.MouseClick(b[0], b[1], b[8]);
-		Orion.Wait(100);
-	});
-}
 function main() {
 	Orion.OptionFastRotation(true);
 	Orion.Resend();
@@ -98,6 +86,13 @@ function getWandsCharges(){
       }
       return true;
    });
+}
+
+function teleportCeiling(){
+	Orion.Print(Player.X());
+	Orion.Print(Player.Y());
+	Orion.Print(Player.Z());
+		Orion.TargetTile('any', 1458, 1558, 70);
 }
 function dismountAllKill(){
 	Orion.UseObject(self);
@@ -985,7 +980,7 @@ function VetPet(){
 function VetAllFriendlyPets(){
 	const useVet = true;
     while(true){
-    	Orion.UseSkill('Meditation');
+    	//Orion.UseSkill('Meditation');
         const mobilesNearby = Orion.FindTypeEx(
         '-1',
         '-1',
@@ -1026,7 +1021,7 @@ function VetAllFriendlyPets(){
 		               	}
 	               	}
                	}
-               // healTarget(lowestHpFriend);
+              //  healTarget(lowestHpFriend);
         }
         Orion.Wait(2000);
     }
@@ -1299,10 +1294,8 @@ function TargetNext(){
 		Orion.RemoveHighlightCharacter(previousEnemy);
 		//Orion.Print( enemytarget.Notoriety());
 		Orion.CharPrint(mobileID,enemyColor , '*** Target Found ***');
-		   	if(Player.Name() !== 'Aulin'){
-          		 Orion.TargetObject(mobileID);
-         
-           }else{
+		   	if(Player.Name() === 'Aulin'){
+
            	 if(!Player.Hidden()){
            	  Orion.Say('All Guard Me');
            	  }
@@ -1656,7 +1649,10 @@ function castOffensiveSpell(spell, timer){
 	Orion.Cast(spell);
 	if(timer){
 		Orion.Wait(timer);
-		Orion.TargetObject(lasttarget);
+		var foe = Orion.FindObject(lasttarget);
+		if(foe.Distance() < 13){
+			Orion.TargetObject(lasttarget);
+		}
 	}
 }
 
@@ -1969,4 +1965,299 @@ function stealPSrelic(){
 	    }  
     });
     
+}
+function getcurrentrunebook() {
+    for (var i = 0; i < Orion.GumpCount(); i++) {
+        runebookgump = Orion.GetGump(i);
+        Orion.Print(runebookgump.Serial());
+        if (runebookgump != null && runebookgump.ID() == '0x554B87F3') {
+            return runebookgump;
+        }
+    }
+}
+function getMapCoords(){
+	Orion.Print(Orion.GetWorldMapPointerPosition().X());
+	Orion.Print(Orion.GetWorldMapPointerPosition().Y());
+	Orion.Print(Player.X());
+ 	Orion.Print(Player.Y());
+}
+function closerunebookgumps() {
+    for (var i = 0; i < Orion.GumpCount(); i++) {
+        runebookgump = Orion.GetGump(i);
+        if (runebookgump != null && runebookgump.ID() == '0x554B87F3') {
+            runebookgump.Select(Orion.CreateGumpHook(0));
+        }
+    }
+}
+
+function testSextant(){
+	 var sextantString = Orion.XYToSextant(1234, 123);
+	 TextWindow.Open();
+     TextWindow.Print(sextantString);
+     Orion.Print(Orion.SextantToXY("131o 55'N, 6o 15'W"));
+}
+ function distanceBetweenTwoPoints(p1, p2) {
+     var distance = Math.floor(Math.sqrt((Math.pow(p2.x-p1.x,2))+(Math.pow(p2.y-p1.y,2))))
+     return distance;
+ }
+ 
+ function areClosePoints(p1, p2) {
+ 	if(p1.x < p2.x + 100 && p1.x > p2.x - 100 && 
+ 	   p1.y < p2.y + 100 && p1.y > p2.y - 100 ){
+ 		return true;
+ 	} 
+ 	return false;
+ }
+ function myPosition(){
+ 
+    		Orion.Print(Player.X());
+    		Orion.Print(Player.Y());
+			Orion.Print(Orion.GetWorldMapPointerPosition().X());
+ }
+function recallByPosition(){
+	var cursorPosition = Orion.GetWorldMapPointerPosition();
+	 closerunebookgumps();
+    var input = Orion.NewFile();
+    input.Open('./OA/Config/' + Player.Serial() + '.json');
+    var runes =JSON.parse(input.ReadAll());
+    var found = false;
+    runes.every(function(rune) {
+    	var areTheyClose = areClosePoints({
+    		x: cursorPosition.X(),
+    		y: cursorPosition.Y()
+    	},{
+    		x: rune.X,
+    		y: rune.Y 
+    	});
+    	var distance = distanceBetweenTwoPoints({
+    		x: cursorPosition.X(),
+    		y: cursorPosition.Y()
+    	},{
+    		x: rune.X,
+    		y: rune.Y 
+    	});
+    		TextWindow.Print( rune.X +' ' + rune.Y +' '+ cursorPosition.X() +' ' +  cursorPosition.Y() +' '+ areTheyClose +' '+ distance);
+    	if(areTheyClose){
+    		Orion.Print('found one');
+    		Orion.Print(rune.RName, rune.RSerial);
+	    	var runebookobj = Orion.FindObject(rune.RSerial);
+	            if (runebookobj) {
+	                if (runebookobj.Distance() < 2) {
+	                    Orion.UseObject(runebookobj.Serial());
+	                    if (Orion.WaitForGump(1500)) {
+	                        var currentGump = getcurrentrunebook();
+	                        currentGump.Select(Orion.CreateGumpHook(rune.RPosition));
+	                        Orion.CharPrint(self, '55', '- ' + rune.RName + ' -');
+	                        found = true;
+	                        
+	                        return false;
+	                    }
+	                } else {
+	                    Orion.CharPrint(runebookobj.Serial(), '22', 'Runebook is too far away!');
+	                    return false;
+	                }
+	                return true;
+	            }
+          		return true;
+    	}   
+	 	return true;
+    });
+	
+}
+
+function fetchRuneBooks() {
+    finalJSON = [];
+    var runes = [];
+    backpackrunebooks = Orion.FindType('0x22C5', '-1', backpack);
+    backpackrunebooks2 = Orion.FindType('0x0EFA', '!0X0000', backpack);
+    groundrunebooks = Orion.FindType('0x22C5', '-1', ground, '2');
+    groundrunebooks2 = Orion.FindType('0x0EFA', '!0x0000', ground, '2');
+    runebooks = backpackrunebooks2.concat(backpackrunebooks, groundrunebooks, groundrunebooks2);
+    closerunebookgumps();
+    runebooks.forEach(function(runebook, i){
+   
+        currentrunebook = Orion.FindObject(runebook);
+        Orion.CharPrint(self, '32', 'Queued: ' + (runebooks.length - i));
+        Orion.UseObject(currentrunebook.Serial());
+        if (Orion.WaitForGump(550)) {
+            var currentGump = getcurrentrunebook();
+            if (currentGump != null) {
+                runebooktext = currentGump.CommandList();
+                button = 5;
+                TextWindow.Open();
+                 var textList = currentGump.TextList();
+               		//textList.forEach(function (t, i){
+               			//TextWindow.Print(i +' ' + t);
+               			
+               		//});
+               		var parsedElement = parseInt(textList[1]);
+                var j = isNaN(parsedElement) ? 1 : 2 ;
+                var toRemove = j;
+               	// TextWindow.Print(parsedElement +'  '+ isNaN(parsedElement));
+                for (var k = 34; k < 66; k +=2) {
+                  	
+                    gumpcommand = currentGump.Command(k);
+                    splittext = gumpcommand.split(/\s+/);
+                  	TextWindow.Print(JSON.stringify(gumpcommand));
+                    var runeX = textList[((textList.length - toRemove ) / 3) + j ];
+                    var runeY = textList[((textList.length - toRemove) / 3) + j + 1];
+               		//TextWindow.Print( currentGump.Text(splittext[7]).toLowerCase() +' ' +runeX +' ' +runeY);
+              		var runX, runY;
+              		if(runeX && runeY ){
+             
+              			runY = runeY;
+              			runX =  runeX;
+              		
+                   		 var sextant, position;
+                   	
+                   	
+                    	sextant = runX.replace(' ', 'o ').replace('�','') +', '+ runY.replace(' ', 'o ').replace('�','');
+         				position =Orion.SextantToXY(sextant);
+         				//TextWindow.Open();
+         				//TextWindow.Print(sextant);
+         			}
+          
+                    var obj = {
+                        RSerial: currentrunebook.Serial(),
+                        RName: currentGump.Text(splittext[7]).toLowerCase(),
+                        RPosition: button,
+                        X: position ? position.X() : null, 
+                        Y: position ? position.Y() : null, 
+                    };
+                    runes.push(obj);
+                    TextWindow.Print(JSON.stringify(obj));
+                    button = button + 6;
+                    j+=2;
+                }
+            }
+        }
+        closerunebookgumps();
+        Orion.Wait(550);
+    });
+    Orion.CharPrint(self, '32', 'Finished!');
+    closerunebookgumps();
+    var output = Orion.NewFile();
+    output.Remove('./OA/Config/' + Player.Serial() + '.json');
+    output.Open('./OA/Config/' + Player.Serial() + '.json');
+    output.Write(JSON.stringify(runes));
+    output.Close();
+}
+
+function recall(args) {
+    closerunebookgumps();
+    args = args.toLowerCase();
+    var input = Orion.NewFile();
+    input.Open('./OA/Config/' + Player.Serial() + '.json');
+    var runes =JSON.parse(input.ReadAll());
+    var found = false;
+    runes.forEach(function(rune) {
+        if (rune.RName == args) {
+            runebookobj = Orion.FindObject(rune.RSerial);
+            Orion.Print(rune.RSerial);
+            if (runebookobj) {
+                if (runebookobj.Distance() < 2) {
+                    Orion.UseObject(runebookobj.Serial());
+                    if (Orion.WaitForGump(1500)) {
+                        var currentGump = getcurrentrunebook();
+                        currentGump.Select(Orion.CreateGumpHook(rune.RPosition));
+                        Orion.CharPrint(self, '55', '- ' + rune.RName + ' -');
+                        found = true;
+                        return;
+                    }
+                } else {
+                    Orion.CharPrint(runebookobj.Serial(), '22', 'Runebook is too far away!');
+                    break;
+                }
+            }
+        }
+    });
+    
+    if(!found){
+    	Orion.Print('Rune name is not found (or currently unable to support spaces in rune names).');
+    }
+}
+
+function gate(args) {
+    closerunebookgumps();
+    args = args.toLowerCase();
+    var input = Orion.NewFile();
+    input.Open('./OA/Config/' + Player.Serial() + '.json');
+    var runes =JSON.parse(input.ReadAll());
+    var found = false;
+    runes.forEach(function(rune) {
+        if (rune.RName == args) {
+            runebookobj = Orion.FindObject(rune.RSerial);
+            if (runebookobj) {
+                if (runebookobj.Distance() < 2) {
+                    Orion.UseObject(runebookobj.Serial());
+                    if (Orion.WaitForGump(1500)) {
+                        var currentGump = getcurrentrunebook();
+                        currentGump.Select(Orion.CreateGumpHook(rune.RPosition + 1));
+                        Orion.CharPrint(self, '55', '- ' + rune.RName + ' -');
+                        return;
+                    }
+                } else {
+                    Orion.CharPrint(runebookobj.Serial(), '22', 'Runebook is too far away!');
+                    return;
+                }
+            }
+        }
+    });
+    if(!found){
+    	Orion.Print('Rune name is not found (or currently unable to support spaces in rune names).');
+    }
+}
+//--#Sallos Commands
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////Sallos commands - Created by aga//////////////////////////////////////////
+///////Change command prefix (hotkeys tab) to '. ' for familiar Sallos functionality/////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+function potdrop() {
+    pottypes = '0x0F0C|0x0F0B|0x0F07|0x0F08|0x0F09|0x0F0D'
+    Orion.Print('Target the destination container.');
+    Orion.AddObject('container');
+    while (Orion.HaveTarget()) {
+        Orion.Wait(20);
+    }
+    pots = Orion.FindTypeEx(pottypes, '0x0000', backpack);
+    if (pots.length) {
+        for (var i = 0; i < pots.length; i++) {
+            Orion.MoveItem(pots[i].Serial(), pots[i].Count(), 'container')
+            Orion.Wait(600);
+        }
+    }
+}
+
+function regdrop() {
+    regtypes = '0x0F8D|0x0F85|0x0F84|0x0F86|0x0F88|0x0F7B|0x0F8C|0x0F7A'
+    Orion.Print('Target the destination container.');
+    Orion.AddObject('container');
+    while (Orion.HaveTarget()) {
+        Orion.Wait(20);
+    }
+    regs = Orion.FindTypeEx(regtypes, '0x0000', backpack);
+    if (regs.length) {
+        for (var i = 0; i < regs.length; i++) {
+            Orion.MoveItem(regs[i].Serial(), regs[i].Count(), 'container')
+            Orion.Wait(600);
+        }
+    }
+}
+
+function move() {
+    Orion.Print('Target one of the items to move.');
+    Orion.WaitForAddType('itemtype');
+    Orion.Print('Target the destination container.');
+    Orion.AddObject('container');
+    while (Orion.HaveTarget()) {
+        Orion.Wait(20);
+    }
+    itemstomove = Orion.FindTypeEx('itemtype', '-1', backpack);
+    if (itemstomove.length) {
+        for (var i = 0; i < itemstomove.length; i++) {
+            Orion.MoveItem(itemstomove[i].Serial(), itemstomove[i].Count(), 'container')
+            Orion.Wait(600);
+        }
+    }
 }
