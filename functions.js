@@ -2036,7 +2036,7 @@ function recallByPosition(){
     		x: rune.X,
     		y: rune.Y 
     	});
-    		TextWindow.Print( rune.X +' ' + rune.Y +' '+ cursorPosition.X() +' ' +  cursorPosition.Y() +' '+ areTheyClose +' '+ distance);
+    		//TextWindow.Print( rune.X +' ' + rune.Y +' '+ cursorPosition.X() +' ' +  cursorPosition.Y() +' '+ areTheyClose +' '+ distance);
     	if(areTheyClose){
     		Orion.Print('found one');
     		Orion.Print(rune.RName, rune.RSerial);
@@ -2084,49 +2084,71 @@ function fetchRuneBooks() {
             if (currentGump != null) {
                 runebooktext = currentGump.CommandList();
                 button = 5;
-                TextWindow.Open();
+                //TextWindow.Open();
                  var textList = currentGump.TextList();
-               		//textList.forEach(function (t, i){
-               			//TextWindow.Print(i +' ' + t);
-               			
-               		//});
-               		var parsedElement = parseInt(textList[1]);
+         		//textList.forEach(function (t, i){
+         			//TextWindow.Print(i +' ' + t);
+         			
+         		//});
+               	var parsedElement = parseInt(textList[1]);
                 var j = isNaN(parsedElement) ? 1 : 2 ;
                 var toRemove = j;
                	// TextWindow.Print(parsedElement +'  '+ isNaN(parsedElement));
+               	var coordsIndex = 70;
+               	var coordsIndexIncrease = 10;
+               	var coordsCommands;
                 for (var k = 34; k < 66; k +=2) {
-                  	
+                	TextWindow.Print('--------------');
+                  	 var sextant = null, position = null;
+                  	 var missed = true;
                     gumpcommand = currentGump.Command(k);
                     splittext = gumpcommand.split(/\s+/);
-                  	TextWindow.Print(JSON.stringify(gumpcommand));
+                  	var runeName = currentGump.Text(splittext[7]).toLowerCase();
+                  	
+                  	if(runeName === 'empty'){
+                  		break;
+                  	}
                     var runeX = textList[((textList.length - toRemove ) / 3) + j ];
                     var runeY = textList[((textList.length - toRemove) / 3) + j + 1];
                		//TextWindow.Print( currentGump.Text(splittext[7]).toLowerCase() +' ' +runeX +' ' +runeY);
-              		var runX, runY;
-              		if(runeX && runeY ){
-             
-              			runY = runeY;
-              			runX =  runeX;
               		
-                   		 var sextant, position;
-                   	
-                   	
-                    	sextant = runX.replace(' ', 'o ').replace('�','') +', '+ runY.replace(' ', 'o ').replace('�','');
+         				
+      				coordsCommand = currentGump.Command(coordsIndex);
+      				coordN = currentGump.Command(coordsIndex).split(/\s+/);
+      				coordE = currentGump.Command(coordsIndex + 1).split(/\s+/);
+
+      				coordsNTextIndex = parseInt(coordN[5]);
+      				coordsETextIndex  = parseInt(coordE[5]);
+      				if(coordsNTextIndex + 1 === coordsETextIndex){
+	      				sextant = textList[coordsNTextIndex].replace(' ', 'o ').replace('�','') +', '+ textList[coordsETextIndex].replace(' ', 'o ').replace('�','');
+	      				position =Orion.SextantToXY(sextant);
+	      				missed = false;
+      				}
+         			
+              		if(runeX && runeY ){
+                   		sextant = runeX.replace(' ', 'o ').replace('�','') +', '+ runeY.replace(' ', 'o ').replace('�','');
          				position =Orion.SextantToXY(sextant);
-         				//TextWindow.Open();
-         				//TextWindow.Print(sextant);
+         				missed = false;
          			}
-          
+          				//rion.InfoGump();
                     var obj = {
                         RSerial: currentrunebook.Serial(),
-                        RName: currentGump.Text(splittext[7]).toLowerCase(),
+                        RName: runeName,
                         RPosition: button,
                         X: position ? position.X() : null, 
                         Y: position ? position.Y() : null, 
                     };
                     runes.push(obj);
-                    TextWindow.Print(JSON.stringify(obj));
+                    
                     button = button + 6;
+                    coordsIndex += coordsIndexIncrease;
+                  	coordsIndexIncrease = coordsIndexIncrease === 10 ? 13 : 10;
+                   
+                    if(missed){
+                    		coordsIndex -= 2;
+                    }
+                    missed = true;
+				
                     j+=2;
                 }
             }
@@ -2194,6 +2216,7 @@ function gate(args) {
                         var currentGump = getcurrentrunebook();
                         currentGump.Select(Orion.CreateGumpHook(rune.RPosition + 1));
                         Orion.CharPrint(self, '55', '- ' + rune.RName + ' -');
+                        found = true;
                         return;
                     }
                 } else {
