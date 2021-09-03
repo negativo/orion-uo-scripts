@@ -1,69 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data version="2">
-    <hotkey type="0" action="1" key="52" modifiers="2" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;remove paralyze&quot;&#10;}&#10;"/>
-    <hotkey type="0" action="1" key="48" modifiers="0" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;pouchhh&quot;&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="49" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castPoison&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="50" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castExplosion&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="51" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castEnergyBolt&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="52" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castMindBlast&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="53" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castWeaken&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="23" action="1" key="8" modifiers="64"/>
-    <hotkey type="2" action="1" key="54" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castClumsy&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="55" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castFeeblemind&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="0" action="1" key="88" modifiers="8" meta="{&#10;    &quot;can_be_looped&quot;: 0,&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;mount&quot;&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="192" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;main&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="66" modifiers="4" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;targetNextToEnemy&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="41" action="6" key="74" modifiers="0"/>
-    <hotkey type="2" action="1" key="90" modifiers="8" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;lightWand&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="6" action="0" key="67" modifiers="4"/>
-    <hotkey type="2" action="1" key="16" modifiers="72" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;punch&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="2" key="69" modifiers="4" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;VetAllFriendlyPets&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="52" action="4" key="87" modifiers="12" meta="{&#10;    &quot;name&quot;: &quot;Armor&quot;&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="71" modifiers="4" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;superWand&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="81" modifiers="8" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;teleportaway&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="65" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;arrowWand&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="52" action="1" key="82" modifiers="8" meta="{&#10;    &quot;name&quot;: &quot;&quot;&#10;}&#10;"/>
-    <hotkey type="0" action="1" key="74" modifiers="4" meta="{&#10;    &quot;can_be_looped&quot;: 0,&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;openbettle&quot;&#10;}&#10;"/>
-    <hotkey type="23" action="4" key="67" modifiers="0"/>
-    <hotkey type="2" action="1" key="83" modifiers="8" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;TargetNext&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="2" key="71" modifiers="2" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;exploxxx&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="2" modifiers="1" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;bandagetimer&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="68" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;followLastTarget&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="7" action="2" key="8" modifiers="72"/>
-    <hotkey type="2" action="2" key="69" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;runForrest&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="1" modifiers="1" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;drinkHeal&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="0" action="1" key="70" modifiers="0" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;forbici to get target&quot;&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="87" modifiers="8" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;equipWeapon&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="58" action="8" key="71" modifiers="0"/>
-    <hotkey type="2" action="1" key="80" modifiers="4" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;AutoProvoke&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="88" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;dismountAllKill&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="73" modifiers="8" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;recallEscape&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="81" modifiers="4" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;weakenWand&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="4" modifiers="1" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;drinkCure&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="74" modifiers="8" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;useMoongate&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="0" action="1" key="76" modifiers="8" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;recalll&quot;&#10;}&#10;"/>
-    <hotkey type="2" action="2" key="77" modifiers="8" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;AutoAttackChamp&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="23" action="0" key="16" modifiers="64"/>
-    <hotkey type="2" action="1" key="87" modifiers="4" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;equipSecondaryWeapon&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="80" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;deposit&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="51" action="0" key="83" modifiers="0"/>
-    <hotkey type="2" action="1" key="2" modifiers="9" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;drinkRefresh&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="23" action="3" key="68" modifiers="8"/>
-    <hotkey type="2" action="1" key="84" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;targetNextToEnemy&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="2" key="69" modifiers="8" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;AutoHealPVM&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="81" modifiers="2" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;manaDrain&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="0" action="1" key="82" modifiers="2" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;explotion potion&quot;&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="70" modifiers="8" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;healWand&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="0" action="1" key="1" modifiers="9" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;drink strength&quot;&#10;}&#10;"/>
-    <hotkey type="56" action="0" key="83" modifiers="2"/>
-    <hotkey type="0" action="1" key="4" modifiers="9" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;drink agility&quot;&#10;}&#10;"/>
-    <hotkey type="0" action="1" key="113" modifiers="8" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;explo enrgy&quot;&#10;}&#10;"/>
-    <hotkey type="0" action="1" key="114" modifiers="8" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;explo mind&quot;&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="115" modifiers="8" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;mindExplo&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="116" modifiers="8" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;manaDrain&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="117" modifiers="8" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;lightExplo&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="53" modifiers="8" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;HealFriends&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="188" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;snoopClosest&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
-    <hotkey type="59" action="1" key="190" modifiers="0" meta="{&#10;    &quot;name&quot;: &quot;New list&quot;&#10;}&#10;"/>
-    <hotkey type="2" action="1" key="112" modifiers="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castMagicArrow&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="66" modifiers="4" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;targetNextToEnemy&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="41" action="6" key="74" modifiers="0" override_pass_key_to_client="0"/>
+    <hotkey type="2" action="1" key="90" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;lightWand&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="2" key="69" modifiers="4" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;VetAllFriendlyPets&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="52" action="4" key="87" modifiers="12" override_pass_key_to_client="0" meta="{&#10;    &quot;name&quot;: &quot;Armor&quot;&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="71" modifiers="4" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;superWand&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="81" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;teleportaway&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="65" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;arrowWand&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="23" action="1" key="8" modifiers="64" override_pass_key_to_client="0"/>
+    <hotkey type="23" action="4" key="67" modifiers="0" override_pass_key_to_client="0"/>
+    <hotkey type="2" action="1" key="83" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;TargetNext&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="2" key="71" modifiers="2" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;exploxxx&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="52" action="1" key="82" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;name&quot;: &quot;&quot;&#10;}&#10;"/>
+    <hotkey type="0" action="1" key="74" modifiers="4" override_pass_key_to_client="0" meta="{&#10;    &quot;can_be_looped&quot;: 0,&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;openbettle&quot;&#10;}&#10;"/>
+    <hotkey type="2" action="2" key="69" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;runForrest&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="2" modifiers="1" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;bandagetimer&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="68" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;followLastTarget&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="1" modifiers="1" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;drinkHeal&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="87" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;equipWeapon&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="58" action="8" key="71" modifiers="0" override_pass_key_to_client="0"/>
+    <hotkey type="2" action="1" key="192" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;main&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="0" action="1" key="70" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;forbici to get target&quot;&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="73" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;recallEscape&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="81" modifiers="4" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;weakenWand&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="80" modifiers="4" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;AutoProvoke&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="88" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;dismountAllKill&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="4" modifiers="1" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;drinkCure&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="16" modifiers="72" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;punch&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="74" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;useMoongate&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="2" key="77" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;AutoAttackChamp&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="0" action="1" key="76" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;recalll&quot;&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="87" modifiers="4" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;equipSecondaryWeapon&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="80" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;deposit&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="7" action="2" key="8" modifiers="72" override_pass_key_to_client="0"/>
+    <hotkey type="51" action="0" key="83" modifiers="0" override_pass_key_to_client="0"/>
+    <hotkey type="2" action="1" key="2" modifiers="9" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;drinkRefresh&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="2" key="69" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;AutoHealPVM&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="81" modifiers="2" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;manaDrain&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="23" action="3" key="68" modifiers="8" override_pass_key_to_client="0"/>
+    <hotkey type="2" action="1" key="84" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;targetNextToEnemy&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="0" action="1" key="1" modifiers="9" override_pass_key_to_client="0" meta="{&#10;    &quot;can_be_looped&quot;: 0,&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;drink strength&quot;&#10;}&#10;"/>
+    <hotkey type="56" action="0" key="83" modifiers="2" override_pass_key_to_client="0"/>
+    <hotkey type="0" action="1" key="82" modifiers="2" override_pass_key_to_client="0" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;explotion potion&quot;&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="70" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;healWand&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="23" action="0" key="16" modifiers="64" override_pass_key_to_client="0"/>
+    <hotkey type="0" action="1" key="4" modifiers="9" override_pass_key_to_client="0" meta="{&#10;    &quot;can_be_looped&quot;: 0,&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;drink agility&quot;&#10;}&#10;"/>
+    <hotkey type="0" action="1" key="113" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;explo enrgy&quot;&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="115" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;mindExplo&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="0" action="1" key="114" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;explo mind&quot;&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="117" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;lightExplo&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="116" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;manaDrain&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="53" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;HealFriends&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="123" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;recallByPosition&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="112" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castMagicArrow&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="49" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castPoison&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="0" action="1" key="52" modifiers="2" override_pass_key_to_client="0" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;remove paralyze&quot;&#10;}&#10;"/>
+    <hotkey type="0" action="1" key="48" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;pouchhh&quot;&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="51" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castEnergyBolt&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="50" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castExplosion&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="188" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;snoopClosest&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="53" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castWeaken&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="52" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castMindBlast&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="59" action="1" key="190" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;name&quot;: &quot;New list&quot;&#10;}&#10;"/>
+    <hotkey type="0" action="1" key="88" modifiers="8" override_pass_key_to_client="0" meta="{&#10;    &quot;can_be_looped&quot;: 0,&#10;    &quot;do_not_interrupt&quot;: 0,&#10;    &quot;name&quot;: &quot;mount&quot;&#10;}&#10;"/>
+    <hotkey type="2" action="1" key="55" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castFeeblemind&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
+    <hotkey type="6" action="0" key="67" modifiers="4" override_pass_key_to_client="0"/>
+    <hotkey type="2" action="1" key="54" modifiers="0" override_pass_key_to_client="0" meta="{&#10;    &quot;external_code&quot;: &quot;&quot;,&#10;    &quot;name&quot;: &quot;castClumsy&quot;,&#10;    &quot;run_once&quot;: 0&#10;}&#10;"/>
 </data>
