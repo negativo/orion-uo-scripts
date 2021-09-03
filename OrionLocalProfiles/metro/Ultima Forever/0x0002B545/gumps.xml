@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data version="1">
+    <gump text_identifier="CGumpStatusbar" type="2" x="-1" y="-1" minimized="true" minimized_x="1870" minimized_y="1030" lock_moving="false" serial="3928686"/>
+    <gump text_identifier="CGumpStatusbar" type="2" x="-1" y="-1" minimized="true" minimized_x="1870" minimized_y="1030" lock_moving="false" serial="933276"/>
+    <gump text_identifier="CGumpStatusbar" type="2" x="-1" y="-1" minimized="true" minimized_x="1870" minimized_y="1030" lock_moving="false" serial="1967133"/>
+    <gump text_identifier="CGumpStatusbar" type="2" x="-1" y="-1" minimized="true" minimized_x="1480" minimized_y="298" lock_moving="false" serial="628074"/>
+    <gump text_identifier="CGumpPaperdoll" type="1" x="1545" y="192" minimized="false" minimized_x="0" minimized_y="0" lock_moving="false"/>
+    <gump text_identifier="CGumpContainer" type="14" x="1588" y="652" minimized="false" minimized_x="0" minimized_y="0" lock_moving="false" serial="1079019514" gridded_width="476" gridded_height="465"/>
+</data>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data version="1">
+    <group name="Miscellaneous">
+        <skill id="4"/>
+        <skill id="6"/>
+        <skill id="10"/>
+        <skill id="12"/>
+        <skill id="19"/>
+        <skill id="3"/>
+        <skill id="36"/>
+    </group>
+    <group name="Combat">
+        <skill id="0"/>
+        <skill id="42"/>
+        <skill id="41"/>
+        <skill id="5"/>
+        <skill id="33"/>
+        <skill id="47"/>
+        <skill id="40"/>
+        <skill id="43"/>
+    </group>
+    <group name="Trade Skills">
+        <skill id="0"/>
+        <skill id="7"/>
+        <skill id="8"/>
+        <skill id="11"/>
+        <skill id="13"/>
+        <skill id="23"/>
+        <skill id="44"/>
+        <skill id="45"/>
+        <skill id="34"/>
+        <skill id="37"/>
+    </group>
+    <group name="Magic">
+        <skill id="0"/>
+        <skill id="16"/>
+        <skill id="46"/>
+        <skill id="26"/>
+        <skill id="32"/>
+    </group>
+    <group name="Wilderness">
+        <skill id="2"/>
+        <skill id="35"/>
+        <skill id="14"/>
+        <skill id="18"/>
+        <skill id="20"/>
+        <skill id="39"/>
+    </group>
+    <group name="Thieving">
+        <skill id="24"/>
+        <skill id="30"/>
+        <skill id="48"/>
+        <skill id="38"/>
+    </group>
+    <group name="Bard">
+        <skill id="15"/>
+        <skill id="28"/>
+    </group>
+    <group name="New Group">
+        <skill id="1"/>
+        <skill id="31"/>
+        <skill id="17"/>
+        <skill id="21"/>
+        <skill id="25"/>
+        <skill id="29"/>
+    </group>
+    <group name="New Group"/>
+    <group name="New Group">
+        <skill id="22"/>
+    </group>
+    <group name="New Group"/>
+    <group name="New Group">
+        <skill id="9"/>
+    </group>
+    <group name="New Group">
+        <skill id="27"/>
+    </group>
+    <group name="New Group"/>
+</data>

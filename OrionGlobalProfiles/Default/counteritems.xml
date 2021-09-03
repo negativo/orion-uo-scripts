@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data version="1">
+    <counter type="1" graphic="0x0000" color="0x0000" display_text="" minimum_value="25" middle_value="50" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="12" graphic="0x0E75" color="0x0000" display_text="w" minimum_value="80" middle_value="60" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="14" graphic="0x0EED" color="0x0000" display_text="gp" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F3F" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F7B" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F7A" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F84" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F85" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F86" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F88" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F8C" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F8D" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F08" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F0C" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F09" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F07" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F0D" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F0B" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F0A" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0F0E" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0E21" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0E79" color="0x0026" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+    <counter type="0" graphic="0x0000" color="0x0000" display_text="" minimum_value="5" middle_value="15" minimum_text_color="33" middle_text_color="53" normal_text_color="68"/>
+</data>

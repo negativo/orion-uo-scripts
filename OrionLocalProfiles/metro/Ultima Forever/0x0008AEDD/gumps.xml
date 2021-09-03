@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data version="1">
+    <gump text_identifier="CGumpStatusbar" type="2" x="-1" y="-1" minimized="true" minimized_x="1870" minimized_y="1030" lock_moving="false" serial="1805191"/>
+    <gump text_identifier="CGumpStatusbar" type="2" x="-1" y="-1" minimized="true" minimized_x="1870" minimized_y="1030" lock_moving="false" serial="220668"/>
+    <gump text_identifier="CGumpStatusbar" type="2" x="-1" y="-1" minimized="true" minimized_x="1352" minimized_y="363" lock_moving="false" serial="6422642"/>
+    <gump text_identifier="CGumpStatusbar" type="2" x="-1" y="-1" minimized="true" minimized_x="1352" minimized_y="301" lock_moving="false" serial="187363"/>
+    <gump text_identifier="CGumpStatusbar" type="2" x="1156" y="615" minimized="true" minimized_x="1352" minimized_y="425" lock_moving="false" serial="569053"/>
+    <gump text_identifier="CGumpStatusbar" type="2" x="-1" y="-1" minimized="true" minimized_x="1370" minimized_y="605" lock_moving="false" serial="4376197"/>
+    <gump text_identifier="CGumpStatusbar" type="2" x="-1" y="-1" minimized="true" minimized_x="1370" minimized_y="570" lock_moving="false" serial="1578243"/>
+    <gump text_identifier="CGumpStatusbar" type="2" x="-1" y="-1" minimized="true" minimized_x="1345" minimized_y="242" lock_moving="false" serial="7129738"/>
+    <gump text_identifier="CGumpStatusbar" type="2" x="-1" y="-1" minimized="true" minimized_x="1333" minimized_y="187" lock_moving="false" serial="2572296"/>
+    <gump text_identifier="CGumpPaperdoll" type="1" x="1439" y="130" minimized="false" minimized_x="0" minimized_y="0" lock_moving="false"/>
+    <gump text_identifier="CGumpContainer" type="14" x="1189" y="553" minimized="false" minimized_x="0" minimized_y="0" lock_moving="false" serial="1091138914" gridded_width="476" gridded_height="465"/>
+    <gump text_identifier="CGumpContainer" type="14" x="1229" y="246" minimized="false" minimized_x="0" minimized_y="0" lock_moving="false" serial="1080324644" gridded_width="476" gridded_height="465"/>
+    <gump text_identifier="CGumpContainer" type="14" x="80" y="80" minimized="false" minimized_x="0" minimized_y="0" lock_moving="false" serial="1080324646" gridded_width="476" gridded_height="465"/>
+</data>

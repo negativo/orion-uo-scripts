@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data version="1">
+    <macro key_id="11" alt="false" ctrl="false" shift="false">
+        <action code="13" sub_code="43"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="30" alt="false" ctrl="false" shift="true">
+        <action code="15" sub_code="65"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="31" alt="false" ctrl="false" shift="true">
+        <action code="15" sub_code="90"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="32" alt="false" ctrl="false" shift="true">
+        <action code="15" sub_code="72"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="33" alt="false" ctrl="false" shift="true">
+        <action code="15" sub_code="78"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="19" alt="false" ctrl="false" shift="true">
+        <action code="13" sub_code="50"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="5" alt="false" ctrl="false" shift="true">
+        <action code="1" sub_code="0" text="bank bank"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="59" alt="false" ctrl="false" shift="false">
+        <action code="15" sub_code="104"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="60" alt="false" ctrl="false" shift="false">
+        <action code="15" sub_code="103"/>
+        <action code="0" sub_code="0"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="61" alt="false" ctrl="false" shift="false">
+        <action code="15" sub_code="98"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="62" alt="false" ctrl="false" shift="false">
+        <action code="15" sub_code="112"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="63" alt="false" ctrl="false" shift="false">
+        <action code="15" sub_code="91"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="65" alt="false" ctrl="false" shift="false">
+        <action code="15" sub_code="99"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="64" alt="false" ctrl="false" shift="false">
+        <action code="15" sub_code="69"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="30" alt="true" ctrl="false" shift="false">
+        <action code="15" sub_code="72"/>
+        <action code="25" sub_code="0"/>
+        <action code="23" sub_code="0"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="31" alt="true" ctrl="false" shift="false">
+        <action code="15" sub_code="65"/>
+        <action code="25" sub_code="0"/>
+        <action code="23" sub_code="0"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="32" alt="true" ctrl="false" shift="false">
+        <action code="15" sub_code="90"/>
+        <action code="25" sub_code="0"/>
+        <action code="23" sub_code="0"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="35" alt="true" ctrl="false" shift="false">
+        <action code="15" sub_code="78"/>
+        <action code="25" sub_code="0"/>
+        <action code="23" sub_code="0"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="36" alt="true" ctrl="false" shift="false">
+        <action code="15" sub_code="97"/>
+        <action code="25" sub_code="0"/>
+        <action code="23" sub_code="0"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="37" alt="false" ctrl="false" shift="false">
+        <action code="15" sub_code="87"/>
+        <action code="25" sub_code="0"/>
+        <action code="23" sub_code="0"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="38" alt="true" ctrl="false" shift="false">
+        <action code="15" sub_code="68"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="16" alt="false" ctrl="false" shift="false">
+        <action code="13" sub_code="47"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="58" alt="false" ctrl="false" shift="true">
+        <action code="15" sub_code="66"/>
+        <action code="25" sub_code="0"/>
+        <action code="22" sub_code="0"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="4" alt="false" ctrl="false" shift="true">
+        <action code="21" sub_code="0"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="7" alt="true" ctrl="false" shift="false">
+        <action code="12" sub_code="0"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="18" alt="false" ctrl="false" shift="true">
+        <action code="17" sub_code="0"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="19" alt="true" ctrl="false" shift="false">
+        <action code="13" sub_code="48"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="30" alt="false" ctrl="true" shift="false">
+        <action code="1" sub_code="0" text="all come"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="31" alt="false" ctrl="true" shift="false">
+        <action code="1" sub_code="0" text="all guard"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="32" alt="false" ctrl="true" shift="false">
+        <action code="1" sub_code="0" text="all kill"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="33" alt="false" ctrl="true" shift="false">
+        <action code="1" sub_code="0" text="all stay"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="34" alt="false" ctrl="true" shift="false">
+        <action code="1" sub_code="0" text="all follow me"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="17" alt="false" ctrl="false" shift="true">
+        <action code="1" sub_code="0" text="i wish to secure this"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="23" alt="true" ctrl="false" shift="false">
+        <action code="15" sub_code="83"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="26" alt="true" ctrl="false" shift="false">
+        <action code="15" sub_code="85"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="22" alt="false" ctrl="false" shift="false">
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="6" alt="false" ctrl="false" shift="true">
+        <action code="27" sub_code="0"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="23" alt="false" ctrl="false" shift="true">
+        <action code="1" sub_code="0" text="stable"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="23" alt="false" ctrl="true" shift="false">
+        <action code="1" sub_code="0" text="claim list"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="21" alt="false" ctrl="false" shift="false">
+        <action code="24" sub_code="57"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="26" alt="false" ctrl="false" shift="false">
+        <action code="24" sub_code="58"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="66" alt="false" ctrl="false" shift="false">
+        <action code="15" sub_code="66"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="4" alt="false" ctrl="true" shift="false">
+        <action code="1" sub_code="0" text="Casa Hythloth"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="77" alt="false" ctrl="false" shift="false">
+        <action code="1" sub_code="0" text="i seek my enemies"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="11" alt="false" ctrl="false" shift="true">
+        <action code="15" sub_code="105"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="37" alt="true" ctrl="false" shift="false">
+        <action code="15" sub_code="87"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="20" alt="false" ctrl="false" shift="false">
+        <action code="15" sub_code="92"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+    <macro key_id="78" alt="false" ctrl="false" shift="false">
+        <action code="1" sub_code="0" text="i ban thee"/>
+        <action code="0" sub_code="0"/>
+    </macro>
+</data>

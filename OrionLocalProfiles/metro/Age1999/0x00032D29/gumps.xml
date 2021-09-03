@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data version="1">
+    <gump text_identifier="CGumpPaperdoll" type="1" x="1323" y="226" minimized="false" minimized_x="0" minimized_y="0" lock_moving="false"/>
+    <gump text_identifier="CGumpContainer" type="14" x="263" y="259" minimized="false" minimized_x="0" minimized_y="0" lock_moving="false" serial="1073949991" gridded_width="194" gridded_height="202"/>
+</data>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data version="1">
+    <gump type="0" layer="0" use_smooth_show_hide="false" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="1" layer="10" can_be_grouped="false" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="2" layer="10" can_be_grouped="true" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="3" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="119" right_mouse_action="0" background_color="0"/>
+    <gump type="4" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="5" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="6" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="7" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="8" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="119" right_mouse_action="0" background_color="0"/>
+    <gump type="9" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="10" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="11" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="12" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="13" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="116" right_mouse_action="0" background_color="551"/>
+    <gump type="14" layer="10" can_be_grouped="false" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="138" right_mouse_action="0" background_color="0"/>
+    <gump type="15" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="16" layer="10" can_be_grouped="true" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="17" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="18" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="19" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="20" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="21" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="22" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="23" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="24" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="25" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="26" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="27" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="28" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="29" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="30" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="111" right_mouse_action="0" background_color="0"/>
+    <gump type="31" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="32" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="33" layer="5" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="34" can_be_grouped="true" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="35" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="36" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="37" layer="6" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="38" layer="10" can_be_grouped="true" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="39" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="40" layer="10" can_be_grouped="true" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="41" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="42" layer="10" can_be_grouped="true" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="43" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="44" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="45" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="46" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="47" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="48" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="49" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="50" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="51" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="52" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="53" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="54" layer="4" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="55" layer="7" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="56" layer="6" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="57" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="58" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="59" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="60" layer="5" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="61" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="62" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="63" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="64" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="65" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="66" layer="10" use_smooth_show_hide="true" can_be_ignored="false" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+    <gump type="67" layer="10" use_smooth_show_hide="true" can_be_ignored="true" opacity="100" scale="100" right_mouse_action="0" background_color="0"/>
+</data>
